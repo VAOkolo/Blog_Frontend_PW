@@ -151,9 +151,55 @@ body{
 }
 
 
+/* posts list */
+.postAvatar img {
+    border-radius: 50%;
+    height: 40px;
+}
 
+.post {
+    display: flex;
+    align-items: flex-start;
+    border-bottom: 1px solid var(--navigation-background);
+    padding-bottom: 10px;
+}
 
+.postBody img {
+    width: 450px;
+    object-fit: contain;
+    border-radius: 20px;
+}
 
+.postFooter {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-right: 30px;   
+}
 
+.postHeaderSpecial {
+    font-weight: 600;
+    font-size: 12px;
+    color: gray;
+}
+
+.postHeaderText h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.postHeaderDescription {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.postBody {
+    flex: 1;
+    padding: 10px ;
+}
+
+.postAvatar{
+    padding: 20px;
+}
 
 
