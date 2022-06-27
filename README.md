@@ -16,7 +16,7 @@
 
 ###### 1.
 
-# Assignment title: Lap1 Futureproof searchEngine
+# Assignment title: Lap1 Futureproof blog
 
 <br>
 
