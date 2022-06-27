@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
 /* <-------------------- recieve data from server --------------------->*/
 
 function fetchDatabase(res) {
-    fetch(`http://localhost:3000/search`)
+    fetch(`http://localhost:3000/blog`)
       .then(resp => resp.json())
       .then(res => {
 
@@ -47,10 +47,10 @@ function fetchDatabase(res) {
 
   searchButton.addEventListener('click',function(e) {
       e.preventDefault();
-      hndlr()
+      fetchDatabase()
 
 
-        const url = "http://localhost:3000/submit"  // The url for post req to be sent to
+        const url = "http://localhost:3000/blog"  // The url for post req to be sent to
         let jsonData = {}
         jsonData.header = header;
         jsonData.description = description;
@@ -83,3 +83,8 @@ function fetchDatabase(res) {
 
 
 /* <-------------------- error handling --------------------->*/
+
+
+/* <-------------------- exporting to jest --------------------->*/
+module.exports = { fetchDatabase: fetchDatabase, newFunc: newFunc }
+/* <-------------------- exporting to jest --------------------->*/

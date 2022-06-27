@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "file.test.js"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/VAOkolo/Blog_Frontend_PW/issues"
   },
-  "homepage": "https://github.com/VAOkolo/Blog_Frontend_PW#readme"
+  "homepage": "https://github.com/VAOkolo/Blog_Frontend_PW#readme",
+  "devDependencies": {
+    "jest": "^28.1.1"
+  }
 }
