@@ -17,17 +17,14 @@ document.addEventListener("DOMContentLoaded", function() {
     fetchDatabase();
   });
 
-  // function countChars(countfrom,displayto) {
-  //   var len = document.getElementById(countfrom).value.length;
-  //   document.getElementById(displayto).value = len;
-  // }
+
 
 
 /* <------------- load database on pageload & get char count of post  -------------->*/
 
 
 /* <-------------------- GIPHY --------------------->*/
-API-KEY:
+// API-KEY:
 
 
 
