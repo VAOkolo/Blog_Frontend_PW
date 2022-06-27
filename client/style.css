@@ -13,6 +13,8 @@ body{
 
 .sidebar {
     padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .sidebarOption {
@@ -155,29 +157,45 @@ body{
     flex: 1;
     margin-left: 20px;
     font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: gray;
     border: none;
     outline: none;
+}
+
+.postInput input {
+    font-size: 20px;
+    color: gray;
 }
 
 .postText {
     display: flex;
     margin-left: 60px;
     margin-right: 60px;
-    font-size: 20px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: gray;
     min-width: 640px;
     max-width: 640px;
-    height: 100px;
-    padding-left: 20px;
+    min-height: 140px;
+    max-height: 140px;
+    height: 100px;  
+    padding-left: 20px;  
     padding-right: 20px;
     padding-top: 10px;
     border: none;
-    outline: none;
-
-    /* border: 1px solid lightgray; */
+    outline: none; 
+   
 }
 
 ::placeholder {
     align-content: flex-start;
+}
+
+.charCount {
+    color: gray;
+    font-size: 18px;
+    margin-left: 10px;     
 }
 
 .postButton {
@@ -186,18 +204,29 @@ body{
     color: white;
     font-weight: 900;
     border-radius: 30px;
-    width: 80px;
-    height: 40px;
-    /* margin-top: 10px; */
-    margin-left: 75%;
+    width: 90px;
+    height: 35px;
+}
+
+.addGift{
+    background-color: white;
+    /* border: 1px solid gray; */
+    border: none;
+    color: gray;
+    height: 30px;
+    width: 30px;
+    font-size: 14px;
+    margin-left: 60%;
+    /* margin-right: 10px;  */
 }
 
 .createPostFooter {
-    display: flex;
-    justify-content: center;
+    display: block;
     margin-top: 20px;
-    margin-left: 40px;
+    margin-left: 60px;
     margin-right: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 /* posts list */
@@ -214,7 +243,7 @@ body{
 }
 
 .postBody img {
-    width: 450px;
+    width: 610px;
     object-fit: contain;
     border-radius: 20px;
 }
@@ -251,7 +280,7 @@ body{
     padding: 20px;
 }
 
-/* specialPost */
+/* special posts */
 .specialPosts {
     flex: 0.3;
 }
