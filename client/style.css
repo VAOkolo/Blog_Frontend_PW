@@ -1,0 +1,159 @@
+
+/* section navigation */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+   --navigation-color: #50b7f5;
+   --navigation-background : #e6ecf0;
+}
+ 
+.sidebar {
+    padding-top: 30px;
+}
+
+.sidebarOption {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.sidebarOption .material-icons {
+    padding: 15px;
+}
+
+
+.material-icons {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+
+.sidebarOption h2{
+    font-weight: 800;
+    font-size: 16px;
+    margin-right: 20px;
+}
+
+.sidebarOption:hover {
+    background-color: var(--navigation-background);
+    color: var(--navigation-color);
+    border-radius: 30px;
+    transition:  color 100ms ease-out;
+}
+
+.sidebarOption.active {
+    color: var(--navigation-color);
+}
+
+.addPost{
+    width: 100%;
+    background-color: var(--navigation-color);
+    border: none;
+    color: white;
+    font-weight: 900;
+    border-radius: 30px;
+    height: 50px;
+    margin-top: 20px;
+}
+
+body{
+    display: flex;
+    height: 100vh;
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 10px;
+}
+
+.sidebar{
+    border-right: 1px solid var(--navigation-background);
+    flex: 0.2;
+}
+
+/* main section */
+.mainSection {
+    flex: 0.5;
+    border-right: 1px solid var(--navigation-background);
+    min-width: fit-content;
+    overflow-y: scroll;
+}
+
+.mainSectionHeader {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+    border: 1px solid var(--navigation-background);
+    padding: 15px 20px;
+}
+
+.mainSectionHeader h2{
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.mainSection::-webkit-scrollbar {
+    display: none;
+}
+
+.mainSection {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* postContainer */
+.postInput img{
+    border-radius: 50%;
+    height: 40px;
+}
+
+.postContainer{
+    padding-bottom: 10px;
+    border-bottom: 8px solid var(--navigation-background);
+    padding-right: 10px;
+}
+
+.postContainer form{
+    display: flex;
+    flex-direction: column;
+}
+
+.postInput {
+    display: flex;
+    padding: 20px;
+}
+
+.postInput input {
+    flex: 1;
+    margin-left: 20px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+}
+
+.postButton {
+    background-color: var(--navigation-color);
+    border: none;
+    color: white;
+    font-weight: 900;
+    border-radius: 30px;
+    width: 80px;
+    height: 40px;
+    margin-top: 20px;
+    margin-left: auto;
+}
+
+
+
+
+
+
+
+
