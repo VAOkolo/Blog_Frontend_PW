@@ -159,7 +159,18 @@ body{
     outline: none;
 }
 
-
+.postText {
+    /* flex: 1; */
+    display: flex;
+    height: 70px;
+    margin-left: 10px;
+    font-size: 20px;
+    width: 95;
+    max-height: 100px;
+    
+    /* border: none;
+    outline: none;  */
+}
 
 .postButton {
     background-color: var(--navigation-color);
