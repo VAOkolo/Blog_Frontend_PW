@@ -10,7 +10,7 @@ body{
    --navigation-color: #50b7f5;
    --navigation-background : #e6ecf0;
 }
- 
+
 .sidebar {
     padding-top: 30px;
     padding-left: 30px;
@@ -185,9 +185,10 @@ body{
     padding-top: 10px;
     border: none;
     outline: none; 
+   
 }
 
-::placeholder {    
+::placeholder {
     align-content: flex-start;
 }
 
@@ -250,8 +251,8 @@ body{
 .postFooter {
     display: flex;
     justify-content: space-around;
-    align-items: left;
-    /* margin-right: 30px;    */
+    align-items: flex-start;
+    margin-right: 30px;
 }
 
 .postHeaderSpecial {
@@ -296,8 +297,8 @@ body{
 
 .specialPostInput input {
     border: none;
-    background-color: var(--navigation-background);   
-    outline: none; 
+    background-color: var(--navigation-background);
+    outline: none;
 }
 
 .specialPostContainer {
