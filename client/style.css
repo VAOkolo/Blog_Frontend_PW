@@ -155,16 +155,23 @@ body{
     flex: 1;
     margin-left: 20px;
     font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
     color: gray;
     border: none;
     outline: none;
+}
+
+.postInput input {
+    font-size: 20px;
+    color: gray;
 }
 
 .postText {
     display: flex;
     margin-left: 60px;
     margin-right: 60px;
-    font-size: 20px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
     color: gray;
     min-width: 640px;
     max-width: 640px;
@@ -174,8 +181,6 @@ body{
     padding-top: 10px;
     border: none;
     outline: none; 
-
-    /* border: 1px solid lightgray; */
 }
 
 ::placeholder {    
@@ -184,7 +189,8 @@ body{
 
 .charCount {
     color: gray;
-    font-size: 16px;
+    font-size: 18px;
+    margin-left: 10px;     
 }
 
 .postButton {
@@ -193,15 +199,24 @@ body{
     color: white;
     font-weight: 900;
     border-radius: 30px;
-    width: 80px;
-    height: 40px;
-    /* margin-top: 10px; */
-    margin-left: 75%;
+    width: 90px;
+    height: 35px;
+}
+
+.addGift{
+    background-color: white;
+    /* border: 1px solid gray; */
+    border: none;
+    color: gray;
+    height: 30px;
+    width: 30px;
+    font-size: 14px;
+    margin-left: 60%;
+    /* margin-right: 10px;  */
 }
 
 .createPostFooter {
-    display: flex;
-    justify-content: center;
+    display: block;
     margin-top: 20px;
     margin-left: 60px;
     margin-right: 40px;
