@@ -65,13 +65,28 @@
 
             <div class="postContainer">
                 <!-- this to be changed to a pop up form when selecting the addPost button -->
+                
                 <form>
                     <div class="postInput">
                         <img src="./images/avatar-icon.jpg" alt="avatar-icon">
                         <input class="postTitle" type="text" placeholder="Title"/>
-                        <input class="postContent" type="text" placeholder="Share your thoughts"/>
+                        <!-- <textare style="border: 1px solid black; width: 80px;" class="postText" placeholder="Share your thoughts"></textare> -->
+                        <!-- <input class="postContent" type="text" placeholder="Share your thoughts"/> -->
                     </div>
-                    <pre class="align">255<button class="postButton">Post</button></pre>
+
+                    <!-- assistance needed for the placeholder does not show -->
+                    <textare class="postText" placeholder="Share your thoughts"></textare> 
+                    
+                    <span class="createPostFooter">
+                        <span class="material-icons"> favorite </span>
+                        <button class="postButton">Post</button>
+                    </span>
+
+                    <!-- <span class="alignFooter">
+                        <pre>255<button class="postButton">Post</button></pre>
+                    </span> -->
+                   
+                    <!-- <pre class="align">test <span class="material-icons"> favorite </span></pre> -->
                   
                 </form>
                 
