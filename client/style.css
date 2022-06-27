@@ -77,6 +77,27 @@ body{
     flex: 0.2;
 }
 
+/* postPopup */
+/* .postPopup {
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0, 0, 0, 0.7);
+    opacity: 0.7;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.postPopupInput{
+    width: 500px;
+    height: 300px;
+    background-color: var(--navigation-background);
+
+} */
+
+
 /* main section */
 .mainSection {
     flex: 0.5;
@@ -147,7 +168,16 @@ body{
     width: 80px;
     height: 40px;
     margin-top: 20px;
+    margin-left: 10px;
+}
+
+.align{
+    /* width: 70px;
+    height: 40px; */
+    margin-top: 20px;
     margin-left: auto;
+    font-size: 16px;
+    
 }
 
 
