@@ -76,3 +76,84 @@ body{
     border-right: 1px solid var(--navigation-background);
     flex: 0.2;
 }
+
+/* main section */
+.mainSection {
+    flex: 0.5;
+    border-right: 1px solid var(--navigation-background);
+    min-width: fit-content;
+    overflow-y: scroll;
+}
+
+.mainSectionHeader {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+    border: 1px solid var(--navigation-background);
+    padding: 15px 20px;
+}
+
+.mainSectionHeader h2{
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.mainSection::-webkit-scrollbar {
+    display: none;
+}
+
+.mainSection {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* postContainer */
+.postInput img{
+    border-radius: 50%;
+    height: 40px;
+}
+
+.postContainer{
+    padding-bottom: 10px;
+    border-bottom: 8px solid var(--navigation-background);
+    padding-right: 10px;
+}
+
+.postContainer form{
+    display: flex;
+    flex-direction: column;
+}
+
+.postInput {
+    display: flex;
+    padding: 20px;
+}
+
+.postInput input {
+    flex: 1;
+    margin-left: 20px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+}
+
+.postButton {
+    background-color: var(--navigation-color);
+    border: none;
+    color: white;
+    font-weight: 900;
+    border-radius: 30px;
+    width: 80px;
+    height: 40px;
+    margin-top: 20px;
+    margin-left: auto;
+}
+
+
+
+
+
+
+
+
