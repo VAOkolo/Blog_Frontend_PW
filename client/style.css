@@ -159,6 +159,8 @@ body{
     outline: none;
 }
 
+
+
 .postButton {
     background-color: var(--navigation-color);
     border: none;
@@ -172,8 +174,6 @@ body{
 }
 
 .align{
-    /* width: 70px;
-    height: 40px; */
     margin-top: 20px;
     margin-left: auto;
     font-size: 16px;
