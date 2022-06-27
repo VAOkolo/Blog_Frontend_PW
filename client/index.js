@@ -2,7 +2,7 @@
 
 var header = document.getElementById("Header").value;
 var description = document.getElementById("Description").value;
-var giphyData = document.getElementById("giphy").value;
+// var giphyData = document.getElementById("giphy").value;
 var submitButton = document.getElementById("submitButton");
 var likeButton = document.getElementById("likeButton");
 var loveButton = document.getElementById("loveButton");
@@ -11,13 +11,27 @@ var dislikeButton = document.getElementById("dislikeButton");
 /* <-------------------- assign elements to variables --------------------->*/
 
 
-/* <-------------------- load database on pageload --------------------->*/
+/* <------------- load database on pageload & get char count of post -------------->*/
 
 document.addEventListener("DOMContentLoaded", function() {
     fetchDatabase();
   });
 
-/* <-------------------- load database on pageload --------------------->*/
+  // function countChars(countfrom,displayto) {
+  //   var len = document.getElementById(countfrom).value.length;
+  //   document.getElementById(displayto).value = len;
+  // }
+
+
+/* <------------- load database on pageload & get char count of post  -------------->*/
+
+
+/* <-------------------- GIPHY --------------------->*/
+API-KEY:
+
+
+
+/* <-------------------- GIPHY --------------------->*/
 
 
 /* <-------------------- recieve data from server --------------------->*/

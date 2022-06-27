@@ -6,40 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <link href="style.css" rel="stylesheet"/> 
+    <link href="style.css" rel="stylesheet"/>
+    <script src="index.js"></script>
 </head>
 <body>
 
         <!-- section navigation start -->
         <div class="sidebar">
-                
+
             <div class="sidebarOption active">
                 <span class="material-icons">home</span>
                 <h2>Home</h2>
             </div>
-    
+
             <div class="sidebarOption">
                 <span class="material-icons">newspaper</span>
                 <h2>News</h2>
             </div>
-    
+
             <div class="sidebarOption">
                 <span class="material-icons">calendar_month</span>
                 <h2>Events</h2>
             </div>
-            
+
             <div class="sidebarOption">
                 <span class="material-icons">notifications_none</span>
                 <h2>Notification</h2>
             </div>
-    
+
             <div class="sidebarOption">
                 <span class="material-icons">bookmark_border</span>
                 <h2>Bookmarks</h2>
             </div>
-    
+
             <button class="addPost">Post</button>
-    
+
         </div>
          <!-- section navigation ends -->
 
@@ -69,12 +70,12 @@
                     <div class="postInput">
                         <img src="./images/avatar-icon.jpg" alt="avatar-icon">
                         <input class="postTitle" type="text" placeholder="Title"/>
-                        <input class="postContent" type="text" placeholder="Share your thoughts"/>
+                        <input class="postContent" id="blogpostDescription" type="text" maxlength="255" placeholder="Share your thoughts" onkeyup="countChars()"/>
                     </div>
-                    <pre class="align">255<button class="postButton">Post</button></pre>
-                  
+                    <pre class="align" id="displayCharCount"><button class="postButton">Post</button></pre>
+
                 </form>
-                
+
             </div>
 
             <!-- post box ends -->
@@ -129,21 +130,21 @@
 
             <div class="specialPostContainer">
                 <h2>Most popular</h2>
-                
+
             </div>
 
             <div class="specialPostContainer">
                 <h2>Not to miss</h2>
-                
+
             </div>
 
 
          </div>
 
          <!-- section special posts ends -->
-         
 
-    
-         
+
+
+
 </body>
 </html>
