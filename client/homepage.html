@@ -6,40 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <link href="style.css" rel="stylesheet"/> 
+    <link href="style.css" rel="stylesheet"/>
+    <script src="index.js"></script>
+    <script src="jqueryCount.mjs"/></script>
 </head>
 <body>
 
         <!-- section navigation start -->
         <div class="sidebar">
-                
+
             <div class="sidebarOption active">
                 <span class="material-icons">home</span>
                 <h2>Home</h2>
             </div>
-    
+
             <div class="sidebarOption">
                 <span class="material-icons">newspaper</span>
                 <h2>News</h2>
             </div>
-    
+
             <div class="sidebarOption">
                 <span class="material-icons">calendar_month</span>
                 <h2>Events</h2>
             </div>
-            
+
             <div class="sidebarOption">
                 <span class="material-icons">notifications_none</span>
                 <h2>Notification</h2>
             </div>
-    
+
             <div class="sidebarOption">
                 <span class="material-icons">bookmark_border</span>
                 <h2>Bookmarks</h2>
             </div>
-    
+
             <button class="addPost">Post</button>
-    
+
         </div>
          <!-- section navigation ends -->
 
@@ -65,7 +67,7 @@
 
             <div class="postContainer">
                 <!-- this to be changed to a pop up form when selecting the addPost button -->
-                
+
                 <form>
                     <div class="postInput">
                         <img src="./images/avatar-icon.jpg" alt="avatar-icon">
@@ -75,22 +77,22 @@
                     </div>
 
                     <!-- assistance needed for the placeholder does not show -->
-                    <textarea class="postText" placeholder="Share your thoughts"></textarea> 
-                    
+                    <textarea class="postText" placeholder="Share your thoughts" id="postText"></textarea>
+
                     <span class="createPostFooter">
-                        <span class="material-icons"> gift </span>
-                        <span class="charCount" id="charCount">0</span>
+                        <span class="material-icons"> gif </span>
+                        <span class="charCount" id="charCount">255</span>
                         <button class="postButton">Post</button>
                     </span>
 
                     <!-- <span class="alignFooter">
                         <pre>255<button class="postButton">Post</button></pre>
                     </span> -->
-                   
+
                     <!-- <pre class="align">test <span class="material-icons"> favorite </span></pre> -->
-                  
+
                 </form>
-                
+
             </div>
 
             <!-- post box ends -->
@@ -145,21 +147,29 @@
 
             <div class="specialPostContainer">
                 <h2>Most popular</h2>
-                
+
             </div>
 
             <div class="specialPostContainer">
                 <h2>Not to miss</h2>
-                
+
             </div>
 
 
          </div>
 
          <!-- section special posts ends -->
-         
 
-    
-         
+
+
+         <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+         <script>
+
+            let timer;
+$('#postText').on('input propertychange', counterLiveUpdate);
+function counterLiveUpdate() {
+    $('#charCount').text(255 - $('#postText').val().length);
+}
+         </script>
 </body>
 </html>
