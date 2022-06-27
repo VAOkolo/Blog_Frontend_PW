@@ -32,7 +32,22 @@ function fetchDatabase(res) {
 
                         // spread data into relevant html elements once data is successfully fetched and html/css styling is finished.
 
-            }
+                        // TODO example
+
+                        document.getElementById('content').innerHTML
+                        += `<br><a style="color: grey; font-size: 12px; text-decoration: none;" href=${res.items[i].link} target="_blank">
+                ${res.items[i].T}
+                </a>
+                <a target="_blank" href=${res.items[i].link} style="text-decoration: none;">
+                <h2 style="font-family: Poppins; margin-top: -1px;" >
+                ${res.items[i].title}
+                </h2>
+                </a>
+                <div style="margin-top: -15px; margin-bottom: 15px;">
+                ${res.items[i].htmlSnippet}</div>`
+                    }
+                        // TODO example
+
           } catch(error) {
             document.getElementById('content').innerHTML = ''
           }
@@ -45,7 +60,7 @@ function fetchDatabase(res) {
 
 /* <-------------------- Post data to server --------------------->*/
 
-  searchButton.addEventListener('click',function(e) {
+    submitButton.addEventListener('click',function(e) {
       e.preventDefault();
       fetchDatabase()
 
@@ -55,7 +70,7 @@ function fetchDatabase(res) {
         jsonData.header = header;
         jsonData.description = description;
         jsonData.giphy = giphyData;
-        jsonData.date = new Date();
+        // jsonData.date = new Date();
 
       const options = {
         method: "POST",
