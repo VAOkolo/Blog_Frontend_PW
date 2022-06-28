@@ -1,10 +1,18 @@
+const btn = document.getElementById("submitButton");
+btn.addEventListener("click", submitFunction);
+
+
+
+
+
+
+
 /* <-------------------- assign elements to variables --------------------->*/
 
 
 // var header = document.getElementById("Header").value;
-var description = document.getElementById("description").value;
+let description = document.getElementById('postText').value;
 // var giphyData = document.getElementById("giphy").value;
-var submitButton = document.getElementById('submitButton');
 // var likeButton = document.getElementById("likeButton");
 // var loveButton = document.getElementById("loveButton");
 // var dislikeButton = document.getElementById("dislikeButton");
@@ -71,38 +79,35 @@ document.addEventListener("DOMContentLoaded", function() {
 
 /* <-------------------- Post data to server --------------------->*/
 
-      submitButton.addEventListener('click', () => {
-        console.log("test");
-      })
 
-  //   submitButton.addEventListener('click', (e) => {
-  //     e.preventDefault();
-  //     console.log("test");
-  //     fetchDatabase();
+      function submitFunction(e) {
+      e.preventDefault();
+      console.log("test");
+      // fetchDatabase();
 
 
-  //       const url = "http://localhost:5000/posts"  // The url for post req to be sent to
-  //       let jsonData = {}
-  //       jsonData.header = header;
-  //       jsonData.description = description;
-  //       jsonData.giphy = giphyData;
-  //       console.log(jsonData)
-  //       // jsonData.date = new Date();
+        const url = "http://localhost:5000/posts"  // The url for post req to be sent to
+        let jsonData = {}
+        // jsonData.header = header;
+        jsonData.description = description;
+        // jsonData.giphy = giphyData;
+        console.log(jsonData)
+        // jsonData.date = new Date();
 
-  //     const options = {
-  //       method: "POST",
-  //       body: JSON.stringify(jsonData),
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //     };
-  //     fetch( url, options )
-  //     .then( response => response.json() )
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
+      const options = {
+        method: "POST",
+        body: JSON.stringify(jsonData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+      fetch( url, options )
+      .then( response => response.json() )
+      .catch((err) => {
+        console.log(err);
+      });
 
-  // });
+  };
 
 
 /* <-------------------- Post data to server --------------------->*/
