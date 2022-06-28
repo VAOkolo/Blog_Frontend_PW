@@ -252,8 +252,6 @@ $(document).on("click", ".btn", function() {
         $("#results").append($div);
       }
 
-
-
       $(".gif").on("mouseover", function() {
         var state = $(this).attr("data-state");
         if (state === "still") {
@@ -266,8 +264,6 @@ $(document).on("click", ".btn", function() {
       });
 
       resultingurl = ''
-
-
       $(".gif").on("click", function() {
         resultingurl = $(this).attr("src")
         console.log(resultingurl);
