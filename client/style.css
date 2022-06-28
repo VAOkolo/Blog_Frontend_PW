@@ -13,6 +13,8 @@ body{
 
 .sidebar {
     padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .sidebarOption {
@@ -67,9 +69,9 @@ body{
     display: flex;
     height: 100vh;
     max-width: 1300px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 10px;
+    /* margin-left: auto; */
+    /* margin-right: auto;
+    padding: 0 10px; */
 }
 
 .sidebar{
@@ -78,24 +80,26 @@ body{
 }
 
 /* postPopup */
-/* .postPopup {
-    width: 100%;
-    height: 100%;
-    background-color:rgba(0, 0, 0, 0.7);
-    opacity: 0.7;
+.postPopUp {
     position: absolute;
+    min-width: 100%;
+    min-height: 100vh;
+    background-color:rgba(0, 0, 0, 0.7);
     top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 200;
+    
 }
 
-.postPopupInput{
+.postPopUpContent{
     width: 500px;
     height: 300px;
-    background-color: var(--navigation-background);
-
-} */
+    background-color: white;
+    border-radius: 20px;
+    /* opacity: 0.7; */
+}
 
 
 /* main section */
@@ -155,17 +159,28 @@ body{
     flex: 1;
     margin-left: 20px;
     font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: gray;
     border: none;
     outline: none;
+}
+
+.postInput input {
+    font-size: 20px;
+    color: gray;
 }
 
 .postText {
     display: flex;
     margin-left: 60px;
     margin-right: 60px;
-    font-size: 20px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: gray;
     min-width: 640px;
     max-width: 640px;
+    min-height: 140px;
+    max-height: 140px;
     height: 100px;
     padding-left: 20px;
     padding-right: 20px;
@@ -173,12 +188,19 @@ body{
     border: none;
     outline: none;
 
-    /* border: 1px solid lightgray; */
 }
 
 ::placeholder {
     align-content: flex-start;
 }
+
+.charCount {
+    color: gray;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+
 
 .postButton {
     background-color: var(--navigation-color);
@@ -186,18 +208,29 @@ body{
     color: white;
     font-weight: 900;
     border-radius: 30px;
-    width: 80px;
-    height: 40px;
-    /* margin-top: 10px; */
-    margin-left: 75%;
+    width: 90px;
+    height: 35px;
+}
+
+.addGift{
+    background-color: white;
+    /* border: 1px solid gray; */
+    border: none;
+    color: gray;
+    height: 30px;
+    width: 30px;
+    font-size: 14px;
+    margin-left: 59%;
+    /* margin-right: 10px;  */
 }
 
 .createPostFooter {
-    display: flex;
-    justify-content: center;
+    display: block;
     margin-top: 20px;
-    margin-left: 40px;
+    margin-left: 60px;
     margin-right: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 /* posts list */
@@ -209,12 +242,18 @@ body{
 .post {
     display: flex;
     align-items: flex-start;
+    /* align-items: left; */
     border-bottom: 1px solid var(--navigation-background);
     padding-bottom: 10px;
 }
 
+.postHeaderText {
+    display: block;
+    align-items: flex-start;
+}
+
 .postBody img {
-    width: 450px;
+    width: 610px;
     object-fit: contain;
     border-radius: 20px;
 }
@@ -226,18 +265,26 @@ body{
     margin-right: 30px;
 }
 
-.postHeaderSpecial {
+.postHeaderBadge {
     font-weight: 600;
     font-size: 12px;
     color: gray;
 }
+.md-48 {
+    font-weight: 600;
+    font-size: 40px !important;
+    color: gray;
+    /* margin-left: 40px; */
+}
 
-.postHeaderText h3 {
+
+
+.postHeaderText h3{
     font-size: 18px;
     margin-bottom: 5px;
 }
 
-.postHeaderDescription {
+.postMainText {
     margin-bottom: 10px;
     font-size: 16px;
 }
@@ -251,7 +298,7 @@ body{
     padding: 20px;
 }
 
-/* specialPost */
+/* special posts */
 .specialPosts {
     flex: 0.3;
 }
@@ -283,3 +330,19 @@ body{
     font-size: 18px;
     font-weight: 800;
 }
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+
