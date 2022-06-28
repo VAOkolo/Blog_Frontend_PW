@@ -81,9 +81,18 @@
 
                     <span class="createPostFooter">
                         <span class="material-icons"> gif </span>
+                        <div class="postPopUp">
+                            <div class="postPopUpContent">
+                                <button class="closePopUp"><span class="material-icons">close</span></button>
+
+
+
+                            </div>
+                         </div>
                         <span class="charCount" id="charCount">255</span>
                         <button class="postButton">Post</button>
                     </span>
+
 
                     <!-- <span class="alignFooter">
                         <pre>255<button class="postButton">Post</button></pre>
@@ -170,6 +179,15 @@ $('#postText').on('input propertychange', counterLiveUpdate);
 function counterLiveUpdate() {
     $('#charCount').text(255 - $('#postText').val().length);
 }
+
+// open pop up box
+document.getElementById('addGif').addEventListener('click', function () {
+  document.querySelector('.postPopUp').style.display ='flex';
+})
+//close pop up box
+document.querySelector('.closePopUp').addEventListener('click', function() {
+  document.querySelector('.postPopUp').style.display ='none';
+})
          </script>
 </body>
 </html>
