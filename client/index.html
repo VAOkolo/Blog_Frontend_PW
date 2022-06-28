@@ -82,7 +82,7 @@
                         <textarea class="postText" placeholder="Share your thoughts" id="postText"></textarea>
                         <span class="charCount" id="charCount">255</span>
                         <button class="postButton" id="submitButton">Post</button>
-
+                        <p class="giphyAppend"></p>
                     </span>
                     <div class="container">
                         <div class="title-search-bar">
@@ -259,10 +259,14 @@ $(document).on("click", ".btn", function() {
         }
       });
 
-      resultingurl = ''
+
       $(".gif").on("click", function() {
+        $(".giphyAppend").append
         resultingurl = $(this).attr("src")
         console.log(resultingurl);
+
+        $(".giphyAppend").text(resultingurl);
+
         // trigger another function that uses resultingurl e.g myFunction(resultingurl); ???
     });
     }

@@ -1,3 +1,4 @@
+
 const btn = document.getElementById("submitButton");
 btn.addEventListener("click", submitFunction);
 
@@ -22,9 +23,9 @@ let description = document.getElementById('postText').value;
 
 /* <-------------------- load database on pageload --------------------->*/
 
-document.addEventListener("DOMContentLoaded", function() {
-    fetchDatabase();
-  });
+// document.addEventListener("DOMContentLoaded", function() {
+//     fetchDatabase();
+//   });
 
 /* <-------------------- load database on pageload --------------------->*/
 
@@ -86,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function() {
       // fetchDatabase();
 
 
-        const url = "http://localhost:5000/posts"  // The url for post req to be sent to
+        const url = "http://localhost:5001/posts"  // The url for post req to be sent to
         let jsonData = {}
         // jsonData.header = header;
         jsonData.description = description;
@@ -125,7 +126,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 /* <-------------------- exporting to jest --------------------->*/
 
-module.exports = { fetchDatabase: fetchDatabase, newFunc: newFunc }
 
 
 // module.exports = { fetchDatabase: fetchDatabase, newFunc: newFunc }
