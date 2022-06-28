@@ -2,9 +2,10 @@
 
 
 // var header = document.getElementById("Header").value;
-var description = document.getElementById("description").value;
+// var description = document.getElementById("description").value;
 // var giphyData = document.getElementById("giphy").value;
 var submitButton = document.getElementById('submitButton');
+var form = document.querySelector('.form');
 // var likeButton = document.getElementById("likeButton");
 // var loveButton = document.getElementById("loveButton");
 // var dislikeButton = document.getElementById("dislikeButton");
@@ -14,17 +15,12 @@ var submitButton = document.getElementById('submitButton');
 
 /* <-------------------- load database on pageload --------------------->*/
 
-document.addEventListener("DOMContentLoaded", function() {
-    fetchDatabase();
-  });
-
-/* <-------------------- load database on pageload --------------------->*/
-
+// document.addEventListener("DOMContentLoaded", function() {
+//     fetchDatabase();
+//   });
 
 /* <-------------------- GIPHY --------------------->*/
 
-
-/* <-------------------- GIPHY --------------------->*/
 
 
 
@@ -71,8 +67,42 @@ document.addEventListener("DOMContentLoaded", function() {
 
 /* <-------------------- Post data to server --------------------->*/
 
-      submitButton.addEventListener('click', () => {
-        console.log("test");
+      submitButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log(e.target);
+        // fetchDatabase();
+        const url = "http://localhost:5000/posts"  // The url for post req to be sent to
+
+
+        const postData = {
+          name: e.target.postTitle.value,
+          age: e.target.postText.value
+      };
+
+      console.log(postData);
+
+        // let jsonData = {}
+        // jsonData.header = header;
+        // jsonData.description = description;
+        // jsonData.giphy = giphyData;
+        // console.log(jsonData)
+        // jsonData.date = new Date();
+
+
+
+      const options = {
+        method: "POST",
+        body: JSON.stringify(jsonData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+
+      fetch( url, options )
+        .then( response => response.json() )
+        .catch((err) => {
+        console.log(err);
+      });
       })
 
   //   submitButton.addEventListener('click', (e) => {
@@ -120,7 +150,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 /* <-------------------- exporting to jest --------------------->*/
 
-module.exports = { fetchDatabase: fetchDatabase, newFunc: newFunc }
+// module.exports = { fetchDatabase: fetchDatabase, newFunc: newFunc }
 
 
 // module.exports = { fetchDatabase: fetchDatabase, newFunc: newFunc }
