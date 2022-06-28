@@ -90,9 +90,7 @@ body{
     justify-content: center;
     align-items: center;
     z-index: 200;
-    
 }
-
 .postPopUpContent{
     width: 500px;
     height: 300px;
