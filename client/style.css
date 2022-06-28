@@ -380,3 +380,10 @@ background: white;
     #comments > li{
         padding-bottom: 10spx;
     }
+
+
+    /* emojidiv */
+
+    .emojiDiv {
+        display: flex;
+    }
