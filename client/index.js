@@ -23,6 +23,11 @@ let description = document.getElementById('postText').value;
 
 /* <-------------------- load database on pageload --------------------->*/
 
+document.addEventListener("DOMContentLoaded", function() {
+     fetchData();
+    });
+
+
 // document.addEventListener("DOMContentLoaded", function() {
 //     fetchDatabase();
 //   });
@@ -48,32 +53,68 @@ let description = document.getElementById('postText').value;
 //         try {
 //             for (let i = 0; i < res.items.length; i++) {
 
-//                         // spread data into relevant html elements once data is successfully fetched and html/css styling is finished.
+                        // spread data into relevant html elements once data is successfully fetched and html/css styling is finished.
 
-//                         // TODO example
+    //                     // TODO example
+
+    //                 }
+    //                     // TODO example
+
+    //       } catch(error) {
+    //         document.getElementById('content').innerHTML = ''
+    //       }
+
+    //   })
+    // }
+
+    //fetch data from database
+    async function fetchData() {
+
+      let response = await fetch(`http://localhost:5001/posts/`);
+      let data = await response.json();
+      
+      console.log(data);
+      appendResults(data);
+  }
+
+  function appendResults(data) {
+    data.forEach(appendResult)
+}
+  
+function appendResult(itemData) {
+
+  // console.log(itemData.header);
+  const postContainer = document.querySelector('.post');
+
+  const container = document.createElement('section');
+  const content = document.createElement('p');
+  const img = document.createElement('img');
+  const textAreaSection = document.createElement('section');
+  const textArea = document.createElement('TEXTAREA');
+  const submitButton = document.createElement('button');
+  // container.setAttribute('class', 'searchresult');
+
+  content.textContent = itemData.content;
+  console.log(itemData)
+  img.src = itemData.giphy[0].source;
+  submitButton.textContent = "Submit";
+
+  textAreaSection.appendChild(textArea);
+  textAreaSection.appendChild(submitButton);
+
+  // headerLink.href = itemData.url;
+  // headerLink.textContent = itemData.header;
+  // header.appendChild(headerLink);
 
 
-//                         document.getElementById('content').innerHTML
-//                         += `<br><a style="color: grey; font-size: 12px; text-decoration: none;" href=${res.items[i].link} target="_blank">
-//                 ${res.items[i].T}
-//                 </a>
-//                 <a target="_blank" href=${res.items[i].link} style="text-decoration: none;">
-//                 <h2 style="font-family: Poppins; margin-top: -1px;" >
-//                 ${res.items[i].title}
-//                 </h2>
-//                 </a>
-//                 <div style="margin-top: -15px; margin-bottom: 15px;">
-//                 ${res.items[i].htmlSnippet}</div>`
-//                     }
-//                         // TODO example
 
-//           } catch(error) {
-//             document.getElementById('content').innerHTML = ''
-//           }
+  // console.log(header, link, text);
+  container.appendChild(content);
+  container.appendChild(img);
+  container.appendChild(textAreaSection);
+  postContainer.appendChild(container);
 
-//       })
-//     }
-
+}
 
 /* <-------------------- recieve data from server --------------------->*/
 
@@ -86,11 +127,14 @@ let description = document.getElementById('postText').value;
       console.log("test");
       // fetchDatabase();
 
-
-        const url = "http://localhost:5001/posts"  // The url for post req to be sent to
+      let description = document.getElementById('postText').value;
+      let giphyURL = document.getElementsByClassName('giphyAppend')[0].outerText;
+      console.log(giphyURL);
+        const url = "http://localhost:5001/posts/post"  // The url for post req to be sent to
         let jsonData = {}
         // jsonData.header = header;
         jsonData.description = description;
+        jsonData.giphyURL = giphyURL;
         // jsonData.giphy = giphyData;
         console.log(jsonData)
         // jsonData.date = new Date();
@@ -108,8 +152,8 @@ let description = document.getElementById('postText').value;
         console.log(err);
       });
 
+      fetchData();
   };
-
 
 /* <-------------------- Post data to server --------------------->*/
 
