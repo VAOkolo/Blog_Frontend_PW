@@ -43,6 +43,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 /* <-------------------- GIPHY --------------------->*/
+
+// Please leave in
+// open pop up box 
+// document.getElementById('addGif').addEventListener('click', function () {
+//   document.querySelector('.postPopUp').style.dispaly ='flex';
+// })
+
+//close pop up box
+// document.querySelector('.closePopUp').addEventListener('click', function() {
+//   document.querySelector('.postPopUp').style.dispaly ='none';
+// })
+
 // API-KEY:
 
 
