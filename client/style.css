@@ -79,10 +79,6 @@ body{
     flex: 0.2;
 }
 
-<<<<<<< HEAD
-/* postPopup */
-=======
->>>>>>> dd289ca54bd0df7a839d495ab1d304d7f3a518c7
 .postPopUp {
     position: absolute;
     min-width: 100%;
@@ -93,13 +89,7 @@ body{
     justify-content: center;
     align-items: center;
     z-index: 200;
-<<<<<<< HEAD
-
 }
-
-=======
-}
->>>>>>> dd289ca54bd0df7a839d495ab1d304d7f3a518c7
 .postPopUpContent{
     width: 500px;
     height: 300px;
@@ -186,11 +176,6 @@ body{
     color: gray;
     min-width: 640px;
     max-width: 640px;
-<<<<<<< HEAD
-    min-height: 140px;
-    max-height: 140px;
-=======
->>>>>>> dd289ca54bd0df7a839d495ab1d304d7f3a518c7
     height: 100px;
     padding-left: 20px;
     padding-right: 20px;
@@ -251,6 +236,7 @@ body{
 
 .post {
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
     /* align-items: left; */
     border-bottom: 1px solid var(--navigation-background);
@@ -389,4 +375,8 @@ background: white;
     h6 {
         font-weight: bold;
         text-align: center;
+    }
+
+    #comments > li{
+        padding-bottom: 10spx;
     }
