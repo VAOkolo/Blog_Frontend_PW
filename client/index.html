@@ -18,6 +18,7 @@
     ></script>
   </head>
   <body>
+
     <!-- section navigation start -->
     <div class="sidebar">
       <div class="sidebarOption active">
@@ -49,16 +50,15 @@
     </div>
     <!-- section navigation ends -->
 
-    <!-- post pop-up starts -->
+         <!-- post pop-up starts -->
 
          <!-- <div class="postPopUp">
             <div class="postPopUpContent">
 
->>>>>>> parent of 946f818 (pop up box hidden)
             </div>
          </div> -->
 
-    <!-- post pop-up ends -->
+        <!-- post pop-up ends -->
 
     <!-- section main starts -->
 
@@ -84,38 +84,14 @@
           ></textarea>
 
           <span class="createPostFooter">
-            <span class="charCount" id="charCount">255</span>
-            <span class="charCount">characters left <i class="fa-solid fa-circle-exclamation"></i
-              ></span>
-              <button>GIF</button>
+            <span class="charCount" id="charCount">255 word(s) left</span>
+              <button class="addGifButton">GIF</button>
 
-         <!-- <div class="postPopUp">
+         <div class="postPopUp">
             <div class="postPopUpContent">
-                
+                <button class="closePopUp"> <span class="material-icons">close</span></button>
             </div>
-         </div> -->
-
-
-            <!-- TODO - giphy api area -->
-
-            <!-- Trigger/Open The popup -->
-
-
-
-
-
-                <!-- TODO - loop over giphy api and print all imgs -->
-
-
-
-
-            <!-- posts list start -->
-
-
-
-
-
-            <!-- TODO - giphy api area -->
+         </div>
 
             <button class="postButton">Post</button>
           </span>
@@ -189,9 +165,16 @@
 // Update the charCount
       $("#postText").on("input propertychange", counterLiveUpdate);
       function counterLiveUpdate() {
-        $("#charCount").text(255 - $("#postText").val().length);
+        $("#charCount").text(255 - $("#postText").val().length  + " word(s) left" );
       }
-
+// open pop up box
+document.getElementById('addGifButton').addEventListener('click', function () {
+  document.querySelector('.postPopUp').style.display ='flex';
+})
+//close pop up box
+document.querySelector('.closePopUp').addEventListener('click', function() {
+  document.querySelector('.postPopUp').style.display ='none';
+})
 
     </script>
 

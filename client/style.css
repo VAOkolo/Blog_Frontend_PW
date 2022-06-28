@@ -28,13 +28,13 @@ body{
 }
 
 
-.material-icons {
+/* .material-icons {
   font-variation-settings:
   'FILL' 0,
   'wght' 400,
   'GRAD' 0,
   'opsz' 48
-}
+} */
 
 
 .sidebarOption h2{
@@ -69,8 +69,8 @@ body{
     display: flex;
     height: 100vh;
     max-width: 1300px;
-    /* margin-left: auto; */
-    /* margin-right: auto;
+    /* margin-left: auto;
+    margin-right: auto;
     padding: 0 10px; */
 }
 
@@ -91,6 +91,7 @@ body{
     align-items: center;
     z-index: 200;
 }
+
 .postPopUpContent{
     width: 500px;
     height: 300px;
@@ -198,8 +199,6 @@ body{
     margin-left: 10px;
 }
 
-
-
 .postButton {
     background-color: var(--navigation-color);
     border: none;
@@ -210,7 +209,7 @@ body{
     height: 35px;
 }
 
-.addGift{
+.addGifButton{
     background-color: white;
     /* border: 1px solid gray; */
     border: none;
@@ -218,7 +217,7 @@ body{
     height: 30px;
     width: 30px;
     font-size: 14px;
-    margin-left: 59%;
+    margin-left: 60%;
     /* margin-right: 10px;  */
 }
 
@@ -268,14 +267,6 @@ body{
     font-size: 12px;
     color: gray;
 }
-.md-48 {
-    font-weight: 600;
-    font-size: 40px !important;
-    color: gray;
-    /* margin-left: 40px; */
-}
-
-
 
 .postHeaderText h3{
     font-size: 18px;
@@ -329,18 +320,5 @@ body{
     font-weight: 800;
 }
 
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 100; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
 
 
