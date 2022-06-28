@@ -1,13 +1,3 @@
-
-const btn = document.getElementById("submitButton");
-btn.addEventListener("click", submitFunction);
-
-
-
-
-
-
-
 /* <-------------------- assign elements to variables --------------------->*/
 
 
@@ -27,52 +17,62 @@ document.addEventListener("DOMContentLoaded", function() {
      fetchData();
     });
 
-
-// document.addEventListener("DOMContentLoaded", function() {
-//     fetchDatabase();
-//   });
-
 /* <-------------------- load database on pageload --------------------->*/
 
 
-/* <-------------------- GIPHY --------------------->*/
+/* <-------------------- Post comments --------------------->*/
+
+function submitComments(e) {
+  e.preventDefault();
+  console.log("test");
+  // fetchDatabase();
 
 
-/* <-------------------- GIPHY --------------------->*/
+  let comments = document.getElementsByClassName('comments').value;
 
+
+    const url = "http://localhost:5000/posts/${postid}/comment";  // The url for post req to be sent to
+    let jsonData = {}
+
+    jsonData.comments = comments;
+    // jsonData.date = new Date();
+    console.log(jsonData)
+
+
+  const options = {
+    method: "POST",
+    body: JSON.stringify(jsonData),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+  fetch( url, options )
+  .then( response => response.json() )
+  .catch((err) => {
+    console.log(err);
+  });
+
+  // fetchData();
+};
+
+/* <--------------------  Post comments  --------------------->*/
+
+/* <--------------------  get comments --------------------->*/
+
+
+
+/* <--------------------  get comments --------------------->*/
 
 
 /* <-------------------- recieve data from server --------------------->*/
 
 
-// function fetchDatabase(res) {
-//     fetch(`http://localhost:5001/posts`)
-//       .then(resp => resp.json())
-//       .then(res => {
-
-//         try {
-//             for (let i = 0; i < res.items.length; i++) {
-
-                        // spread data into relevant html elements once data is successfully fetched and html/css styling is finished.
-
-    //                     // TODO example
-
-    //                 }
-    //                     // TODO example
-
-    //       } catch(error) {
-    //         document.getElementById('content').innerHTML = ''
-    //       }
-
-    //   })
-    // }
-
     //fetch data from database
     async function fetchData() {
 
-      let response = await fetch(`http://localhost:5001/posts/`);
+      let response = await fetch(`http://localhost:5000/posts/`);
       let data = await response.json();
-      
+
       console.log(data);
       appendResults(data);
   }
@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function() {
   function appendResults(data) {
     data.forEach(appendResult)
 }
-  
+
 function appendResult(itemData) {
 
   // console.log(itemData.header);
@@ -92,8 +92,12 @@ function appendResult(itemData) {
   const textAreaSection = document.createElement('section');
   const textArea = document.createElement('TEXTAREA');
   const submitButton = document.createElement('button');
-  // container.setAttribute('class', 'searchresult');
 
+  // container.setAttribute('class', 'searchresult');
+container.setAttribute('id', itemData.id)
+textArea.setAttribute('class', "comments")
+
+  console.log(itemData.id)
   content.textContent = itemData.content;
   console.log(itemData)
   img.src = itemData.giphy[0].source;
@@ -121,6 +125,9 @@ function appendResult(itemData) {
 
 /* <-------------------- Post data to server --------------------->*/
 
+const btn = document.getElementById("submitButton");
+btn.addEventListener("click", submitFunction);
+
 
       function submitFunction(e) {
       e.preventDefault();
@@ -130,7 +137,7 @@ function appendResult(itemData) {
       let description = document.getElementById('postText').value;
       let giphyURL = document.getElementsByClassName('giphyAppend')[0].outerText;
       console.log(giphyURL);
-        const url = "http://localhost:5001/posts/post"  // The url for post req to be sent to
+        const url = "http://localhost:5000/posts/post"  // The url for post req to be sent to
         let jsonData = {}
         // jsonData.header = header;
         jsonData.description = description;
