@@ -43,6 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 /* <-------------------- GIPHY --------------------->*/
+<<<<<<< HEAD
 
 // Please leave in
 // open pop up box 
@@ -55,6 +56,8 @@ document.addEventListener("DOMContentLoaded", function() {
 //   document.querySelector('.postPopUp').style.display ='none';
 // })
 
+=======
+>>>>>>> parent of 946f818 (pop up box hidden)
 // API-KEY:
 
 
