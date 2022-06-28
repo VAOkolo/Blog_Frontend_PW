@@ -26,38 +26,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 /* <-------------------- Post comments --------------------->*/
 
-function submitComments(e) {
-  e.preventDefault();
-  console.log("test");
-  // fetchDatabase();
-
-
-  let comments = document.getElementsByClassName('comments').value;
-
-
-    const url = "http://localhost:5000/posts/${postid}/comment";  // The url for post req to be sent to
-    let jsonData = {}
-
-    jsonData.comments = comments;
-    // jsonData.date = new Date();
-    console.log(jsonData)
-
-
-  const options = {
-    method: "POST",
-    body: JSON.stringify(jsonData),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  };
-  fetch( url, options )
-  .then( response => response.json() )
-  .catch((err) => {
-    console.log(err);
-  });
-
-  // fetchData();
-};
 
 /* <--------------------  Post comments  --------------------->*/
   let parentSection = document.querySelector('.parentsection')
@@ -68,16 +36,21 @@ function printComment(e){
 
   //get id for clicked submit button
     e.preventDefault();
-    console.log(e);
+    // console.log(e);
     let submitButton = e.path[0].id;
-    console.log(submitButton);
+    console.log(typeof submitButton);
+    let postid = submitButton.slice(0, submitButton.indexOf('-'))
+    let comment = e.path[1].childNodes[0].value;
+    console.log(comment)
 
-    let comment = document.getElementById('postText').value;
+    if(submitButton != "" && postid != "" && comment != ""){
+    // console.log(postid);
 
-        const url = "http://localhost:5001/posts/post"  // The url for post req to be sent to
+        const url = `http://localhost:5001/posts/${postid}/comment`  // The url for post req to be sent to
+        console.log(url);
         let jsonData = {}
-        jsonData.description = description;
-        // console.log(jsonData)
+        jsonData.content = comment;
+        console.log(jsonData)
         // jsonData.date = new Date();
 
       const options = {
@@ -92,6 +65,8 @@ function printComment(e){
       .catch((err) => {
         console.log(err);
       });
+
+    }
 
   }
 
