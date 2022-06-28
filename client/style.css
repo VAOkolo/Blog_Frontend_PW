@@ -284,4 +284,51 @@ body{
 }
 
 
+/* giphy */
+.container {
+    overflow: scroll;
+    display: inline-block;
+    height: auto;
+    align-items: center;
+    justify-content: center;
 }
+
+
+.title-search-bar {
+    text-align: center;
+
+
+}
+    .search-btn {
+        margin: 3px;
+    }
+    #submit,
+    .trending {
+        margin-bottom: 6px;
+    }
+    .search-bar {
+        margin-top: 0.4rem;
+    }
+
+
+#results {
+display: flex;
+justify-content: center;
+max-width: 30vw;
+background: white;
+}
+
+.gif-box {
+    margin: 0.5rem;
+    display: inline-block;
+    border: 1px solid black;
+    height: auto;
+    width: auto;
+}
+    img {
+        display: block;
+    }
+    h6 {
+        font-weight: bold;
+        text-align: center;
+    }
