@@ -17,6 +17,10 @@ document.addEventListener("DOMContentLoaded", function() {
      fetchData();
     });
 
+
+
+
+
 /* <-------------------- load database on pageload --------------------->*/
 
 
@@ -56,6 +60,41 @@ function submitComments(e) {
 };
 
 /* <--------------------  Post comments  --------------------->*/
+  let parentSection = document.querySelector('.parentsection')
+  
+  parentSection.addEventListener('click', printComment)
+  
+function printComment(e){
+
+  //get id for clicked submit button
+    e.preventDefault();
+    console.log(e);
+    let submitButton = e.path[0].id;
+    console.log(submitButton);
+
+    let comment = document.getElementById('postText').value;
+
+        const url = "http://localhost:5001/posts/post"  // The url for post req to be sent to
+        let jsonData = {}
+        jsonData.description = description;
+        // console.log(jsonData)
+        // jsonData.date = new Date();
+
+      const options = {
+        method: "POST",
+        body: JSON.stringify(jsonData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+      fetch( url, options )
+      .then( response => response.json() )
+      .catch((err) => {
+        console.log(err);
+      });
+
+  }
+
 
 /* <--------------------  get comments --------------------->*/
 
@@ -70,10 +109,10 @@ function submitComments(e) {
     //fetch data from database
     async function fetchData() {
 
-      let response = await fetch(`http://localhost:5000/posts/`);
+      let response = await fetch(`http://localhost:5001/posts/`);
       let data = await response.json();
 
-      console.log(data);
+      // console.log(data);
       appendResults(data);
   }
 
@@ -84,7 +123,7 @@ function submitComments(e) {
 function appendResult(itemData) {
 
   // console.log(itemData.header);
-  const postContainer = document.querySelector('.post');
+  const postContainer = document.querySelector('.parentsection');
 
   const container = document.createElement('section');
   const content = document.createElement('p');
@@ -96,10 +135,12 @@ function appendResult(itemData) {
   // container.setAttribute('class', 'searchresult');
 container.setAttribute('id', itemData.id)
 textArea.setAttribute('class', "comments")
+submitButton.setAttribute('id', `${itemData.id}-submitcomment`)
+submitButton.setAttribute('type', 'submit');
 
-  console.log(itemData.id)
+  // console.log(itemData.id)
   content.textContent = itemData.content;
-  console.log(itemData)
+  // console.log(itemData)
   img.src = itemData.giphy[0].source;
   submitButton.textContent = "Submit";
 
@@ -129,6 +170,7 @@ const btn = document.getElementById("submitButton");
 btn.addEventListener("click", submitFunction);
 
 
+
       function submitFunction(e) {
       e.preventDefault();
       console.log("test");
@@ -137,7 +179,7 @@ btn.addEventListener("click", submitFunction);
       let description = document.getElementById('postText').value;
       let giphyURL = document.getElementsByClassName('giphyAppend')[0].outerText;
       console.log(giphyURL);
-        const url = "http://localhost:5000/posts/post"  // The url for post req to be sent to
+        const url = "http://localhost:5001/posts/post"  // The url for post req to be sent to
         let jsonData = {}
         // jsonData.header = header;
         jsonData.description = description;
