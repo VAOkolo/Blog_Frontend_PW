@@ -47,11 +47,11 @@
 
          <!-- post pop-up starts -->
 
-         <div class="postPopUp">
+         <!-- <div class="postPopUp">
             <div class="postPopUpContent">
                 
             </div>
-         </div>
+         </div> -->
 
          <!-- post pop-up ends -->
 
@@ -178,7 +178,7 @@
             let timer;
 $('#postText').on('input propertychange', counterLiveUpdate);
 function counterLiveUpdate() {
-    $('#charCount').text(255 - $('#postText').val().length);
+    $('#charCount').text((255 - $('#postText').val().length) + " word(s) left");
 }
          </script>
 </body>
