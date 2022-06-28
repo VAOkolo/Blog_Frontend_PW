@@ -89,11 +89,11 @@
               ></span>
               <button>GIF</button>
 
-         <div class="postPopUp">
+         <!-- <div class="postPopUp">
             <div class="postPopUpContent">
                 <button class="closePopUp"><span class="material-icons">close</span></button>
             </div>
-         </div>
+         </div> -->
 
 
             <!-- TODO - giphy api area -->
@@ -203,16 +203,6 @@ $('#postText').on('input propertychange', counterLiveUpdate);
 function counterLiveUpdate() {
     $('#charCount').text((255 - $('#postText').val().length) + " word(s) left");
 }
-         
-         // open pop up box 
-document.getElementById('addGif').addEventListener('click', function () {
-  document.querySelector('.postPopUp').style.display ='flex';
-})
-
-//close pop up box
-document.querySelector('.closePopUp').addEventListener('click', function() {
-  document.querySelector('.postPopUp').style.display ='none';
-})
          </script>
 </body>
 
