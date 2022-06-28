@@ -47,12 +47,12 @@ document.addEventListener("DOMContentLoaded", function() {
 // Please leave in
 // open pop up box 
 // document.getElementById('addGif').addEventListener('click', function () {
-//   document.querySelector('.postPopUp').style.dispaly ='flex';
+//   document.querySelector('.postPopUp').style.display ='flex';
 // })
 
 //close pop up box
 // document.querySelector('.closePopUp').addEventListener('click', function() {
-//   document.querySelector('.postPopUp').style.dispaly ='none';
+//   document.querySelector('.postPopUp').style.display ='none';
 // })
 
 // API-KEY:
