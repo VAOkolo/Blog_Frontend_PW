@@ -191,7 +191,73 @@ submitButton.setAttribute('type', 'submit');
 const btn = document.getElementById("submitButton");
 btn.addEventListener("click", submitFunction);
 
+function submitFunction(e) {
+  e.preventDefault();
+  console.log("test");
+  // fetchDatabase();
 
+  let description = document.getElementById('postText').value;
+  let giphyURL = document.getElementsByClassName('giphyAppend')[0].outerText;
+  console.log(giphyURL);
+    const url = "http://localhost:5000/posts/post"  // The url for post req to be sent to
+    let jsonData = {}
+    // jsonData.header = header;
+    jsonData.description = description;
+    jsonData.giphyURL = giphyURL;
+    // jsonData.giphy = giphyData;
+    console.log(jsonData)
+    // jsonData.date = new Date();
+
+  const options = {
+    method: "POST",
+    body: JSON.stringify(jsonData),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+  fetch( url, options )
+  .then( response => response.json() )
+  .catch((err) => {
+    console.log(err);
+  });
+
+  //parent container 
+  const parentContainer = document.querySelector('.parentsection');
+  //container
+  const container = document.createElement('section');
+  const htmlContent = document.createElement('p');
+  const img = document.createElement('img');
+
+  htmlContent.textContent = description;
+  img.textContent = giphyURL;
+
+  container.appendChild(htmlContent);
+  container.appendChild(img);
+
+  //textAreaContainer - where you input comments
+  const textAreaContainer = document.createElement('section');
+  const textArea = document.createElement('textarea');
+  const button = document.createElement('button');
+
+  submitButton.textContent = "Submit";
+  submitButton.setAttribute('type', 'submit');
+
+  textAreaContainer.appendChild(textArea);
+  textAreaContainer.appendChild(button);
+  container.appendChild(textAreaContainer);
+
+  //commentContainer = where comments are handled
+  const commentContainer = document.createElement('section')
+  const ul = document.createElement('ul');
+  const li = document.createElement('li');
+
+  ul.appendChild(li);
+  commentContainer.appendChild(ul);
+  
+  //add to parent container
+  parentContainer.appendChild(container);
+
+};
 /* <-------------------- Post data to server --------------------->*/
 
 /* <-------------------- error handling --------------------->*/
