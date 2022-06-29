@@ -65,6 +65,8 @@ function printComment(e){
       });
 
     }
+    //trying to reload page
+    location.reload();
 
   }
 
@@ -90,14 +92,30 @@ function appendResults(data) {
 
 function appendResult(itemData) {
   // console.log(itemData.header);
+  //postContainer is where all posts will sit
   const postContainer = document.querySelector('.parentsection');
-
+  //container is where all post elements will sit
   const container = document.createElement('section');
   const content = document.createElement('p');
   const img = document.createElement('img');
   const textAreaSection = document.createElement('section');
   const textArea = document.createElement('TEXTAREA');
   const submitButton = document.createElement('button');
+
+  //comment parts and build
+  // const commentContainer = createElement('section');
+  // commentContainer.setAttribute('id', 'commentcontainer');
+  // const ul = createElement('ul');
+  // const commentArray = itemData.comments;
+
+  //loop through comment array populating uls
+  // for(i = 0; i < commentArray.length; i++){
+  //   let li = createElement('li');
+  //   li.textContent = commentArray[i].content;
+  //   ul.appendChild(li);
+  // }
+
+  // console.log(ul);
 
   // container.setAttribute('class', 'searchresult');
 container.setAttribute('id', itemData.id)
@@ -115,9 +133,9 @@ submitButton.setAttribute('type', 'submit');
   container.setAttribute("id", itemData.id);
   textArea.setAttribute("class", "comments");
 
-  console.log(itemData)
-  console.log(itemData.reactions)
-  console.log(itemData.reactions.like)
+  console.log(itemData.comments[0].content)
+  // console.log(itemData.reactions)
+  // console.log(itemData.reactions.like)
 
 
   content.textContent = itemData.content;
@@ -139,6 +157,11 @@ submitButton.setAttribute('type', 'submit');
   emojiDiv.appendChild(likes);
   emojiDiv.appendChild(likeBtn);
 
+  
+
+  //push list items which are comments into ul
+
+  //create a complete post involving all necessary elements
   // console.log(header, link, text);
   container.appendChild(content);
   container.appendChild(img);
