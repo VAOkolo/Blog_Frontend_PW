@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /* <--------------------  Post comments  --------------------->*/
   let parentSection = document.querySelector('.parentsection')
-  
+
   // parentSection.addEventListener('click', printComment)
   // parentSection.addEventListener('click', updateReaction)
   parentSection.addEventListener('click', (e) => {
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // submitButton.addEventListener('click', printComment);
 
 
-  
+
 function printComment(e){
 
   //get id for clicked submit button
@@ -106,7 +106,7 @@ function printComment(e){
 
     }
     //trying to reload page
-    
+
 
   }
 
@@ -286,7 +286,7 @@ function submitFunction(e) {
     console.log(err);
   });
 
-  //parent container 
+  //parent container
   const parentContainer = document.querySelector('.parentsection');
   //container
   const container = document.createElement('section');
@@ -363,7 +363,7 @@ function submitFunction(e) {
 
   ul.appendChild(li);
   commentContainer.appendChild(ul);
-  
+
   //add to parent container
   parentContainer.appendChild(container);
 
@@ -395,7 +395,7 @@ function updateReaction(e){
     // console.log(likeCount);
 
     // if(id != "" &&  id != undefined){
-    
+
         const url = `http://localhost:5000/posts/${id}/reactions/${reaction}`  // The url for post req to be sent to
         // console.log(url);
         let jsonData = {}
