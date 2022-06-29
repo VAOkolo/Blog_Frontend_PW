@@ -148,6 +148,7 @@ function appendResult(itemData) {
   const ul = document.createElement('ul');
   ul.setAttribute('id', `${itemData.id}-commentul`);
   const commentArray = itemData.comments;
+  console.log(commentArray);
 
   // loop through comment array populating uls
   for(i = 0; i < commentArray.length; i++){
@@ -332,7 +333,7 @@ function updateReaction(e){
 
   e.preventDefault();
   // let likes = 0;
-    // console.log(e);
+    console.log(e);
     let reaction = "";
     // let likeCount = parseInt(e.path[2].childNodes[2].childNodes[0].textContent);
     // let idname = e.path[2].childNodes[2].childNodes[0].id;
