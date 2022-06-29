@@ -39,7 +39,7 @@ function printComment(e){
     console.log(typeof submitButton);
     let postid = submitButton.slice(0, submitButton.indexOf('-'))
     let comment = e.path[1].childNodes[0].value;
-    console.log(comment)
+    console.log(postid)
 
     if(submitButton != "" && postid != "" && comment != ""){
     // console.log(postid);
@@ -64,9 +64,19 @@ function printComment(e){
         console.log(err);
       });
 
+      // populate section with dummy data
+      let ul = document.getElementById(`${postid}-commentul`);
+      console.log(ul);
+      let li = document.createElement('li');
+      console.log(comment);
+      li.textContent = comment;
+      console.log(li);
+      ul.appendChild(li);
+
+
     }
     //trying to reload page
-    location.reload();
+    
 
   }
 
@@ -103,19 +113,21 @@ function appendResult(itemData) {
   const submitButton = document.createElement('button');
 
   //comment parts and build
-  // const commentContainer = createElement('section');
-  // commentContainer.setAttribute('id', 'commentcontainer');
-  // const ul = createElement('ul');
-  // const commentArray = itemData.comments;
+  const commentContainer = document.createElement('section');
+  commentContainer.setAttribute('id', `${itemData.id}-commentcontainer`);
+  const ul = document.createElement('ul');
+  ul.setAttribute('id', `${itemData.id}-commentul`);
+  const commentArray = itemData.comments;
 
-  //loop through comment array populating uls
-  // for(i = 0; i < commentArray.length; i++){
-  //   let li = createElement('li');
-  //   li.textContent = commentArray[i].content;
-  //   ul.appendChild(li);
-  // }
-
-  // console.log(ul);
+  // loop through comment array populating uls
+  for(i = 0; i < commentArray.length; i++){
+    let li = document.createElement('li');
+    li.textContent = commentArray[i].content;
+    ul.appendChild(li);
+  }
+  //append ul full of li comments as child element of comment container
+  console.log(ul);
+  commentContainer.appendChild(ul);
 
   // container.setAttribute('class', 'searchresult');
 container.setAttribute('id', itemData.id)
@@ -157,7 +169,8 @@ submitButton.setAttribute('type', 'submit');
   emojiDiv.appendChild(likes);
   emojiDiv.appendChild(likeBtn);
 
-  
+  //applying borders to the sections
+  container.style.border = "2px dotted red"
 
   //push list items which are comments into ul
 
@@ -167,6 +180,7 @@ submitButton.setAttribute('type', 'submit');
   container.appendChild(img);
   container.appendChild(emojiDiv);
   container.appendChild(textAreaSection);
+  container.appendChild(commentContainer);
   postContainer.appendChild(container);
 }
 
@@ -176,53 +190,6 @@ submitButton.setAttribute('type', 'submit');
 
 const btn = document.getElementById("submitButton");
 btn.addEventListener("click", submitFunction);
-
-function submitFunction(e) {
-  e.preventDefault();
-  // console.log("test");
-  // fetchDatabase();
-
-
-      function submitFunction(e) {
-      e.preventDefault();
-      console.log("test");
-      // fetchDatabase();
-
-      let description = document.getElementById('postText').value;
-      let giphyURL = document.getElementsByClassName('giphyAppend')[0].outerText;
-      console.log(giphyURL);
-        const url = "http://localhost:5000/posts/post"  // The url for post req to be sent to
-        let jsonData = {}
-        // jsonData.header = header;
-        jsonData.description = description;
-        jsonData.giphyURL = giphyURL;
-        // jsonData.giphy = giphyData;
-        console.log(jsonData)
-        // jsonData.date = new Date();
-
-      const options = {
-        method: "POST",
-        body: JSON.stringify(jsonData),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      };
-      fetch( url, options )
-      .then( response => response.json() )
-      .catch((err) => {
-        console.log(err);
-      });
-
-      fetchData();
-  };
-  fetch(url, options)
-    .then((response) => response.json())
-    .catch((err) => {
-      console.log(err);
-    });
-
-  fetchData();
-}
 
 
 /* <-------------------- Post data to server --------------------->*/
