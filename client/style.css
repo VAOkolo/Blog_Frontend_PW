@@ -136,7 +136,7 @@ body{
 .searchGifButton:hover {
     color: gray;
     background-color: var(--navigation-background);
-    border-radius: 10px;   
+    border-radius: 10px;
 }
 
 
@@ -442,4 +442,21 @@ body{
 
     .emojicontainer {
         display: flex;
+    }
+
+
+    #results {
+        display: flex;
+        width: 500px;
+        overflow: scroll;
+        flex-direction: row;
+    }
+
+    .giphyContainer {
+        margin: auto;
+        width: 500px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
     }
