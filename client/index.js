@@ -30,20 +30,30 @@ document.addEventListener("DOMContentLoaded", function () {
   
   // parentSection.addEventListener('click', printComment)
   // parentSection.addEventListener('click', updateReaction)
-  // parentSection.addEventListener('click', (e) => {
-      //if x printComment
-      //else if y updateReaction
-      //else do nothing
-      // e.preventDefault();
+  parentSection.addEventListener('click', (e) => {
+      // if x printComment
+      // else if y updateReaction
+      // else do nothing
+      e.preventDefault();
       // console.log(e);
+
+      if(e.target.innerText.includes('Submit')){
+        console.log('running printComment');
+        printComment(e);
+      } else if(e.target.parentElement.className.includes('emojicontainer')) {
+        console.log('running updateReaction');
+        updateReaction(e);
+      }
 
     // printComment
     // updateReaction
-  // })
+  })
 
-  let submitButton = document.querySelector('.submitbuttonpost')
-  console.log(submitButton);
-  submitButton.addEventListener('click', printComment);
+  // working with flo
+
+  // let submitButton = document.querySelector('.submitbuttonpost')
+  // console.log(submitButton);
+  // submitButton.addEventListener('click', printComment);
 
 
   
@@ -164,6 +174,9 @@ submitButton.setAttribute('type', 'submit');
   const dislikes = document.createElement("p");
   const loveBtn = document.createElement('button');
   const love = document.createElement("p");
+  const likeDiv = document.createElement('div');
+  const dislikeDiv = document.createElement('div');
+  const loveDiv = document.createElement('div');
 
   // container.setAttribute('class', 'searchresult');
   container.setAttribute("id", itemData.id);
@@ -181,6 +194,19 @@ submitButton.setAttribute('type', 'submit');
   dislikes.textContent = itemData.reactions.dislike
   loveBtn.textContent = "❤️";
   love.textContent = itemData.reactions.love
+
+  //throw emoji content into respective divs
+  likeDiv.appendChild(likes)
+  likeDiv.appendChild(likeBtn)
+  dislikeDiv.appendChild(dislikes)
+  dislikeDiv.appendChild(dislikeBtn)
+  loveDiv.appendChild(love)
+  loveDiv.appendChild(loveBtn)
+
+  //give divs all same class to flex emoji and count
+  likeDiv.setAttribute('class',"emojicontainer")
+  dislikeDiv.setAttribute('class',"emojicontainer")
+  loveDiv.setAttribute('class',"emojicontainer")
   // console.log(itemData)
   img.src = itemData.giphy;
   submitButton.textContent = "Submit";
@@ -202,12 +228,9 @@ submitButton.setAttribute('type', 'submit');
   dislikeBtn.setAttribute('class','dislike');
   loveBtn.setAttribute('class','love');
   emojiDiv.setAttribute("class", "emojiDiv");
-  emojiDiv.appendChild(likes);
-  emojiDiv.appendChild(likeBtn);
-  emojiDiv.appendChild(dislikes);
-  emojiDiv.appendChild(dislikeBtn);
-  emojiDiv.appendChild(love);
-  emojiDiv.appendChild(loveBtn);
+  emojiDiv.appendChild(likeDiv);
+  emojiDiv.appendChild(dislikeDiv);
+  emojiDiv.appendChild(loveDiv);
 
 
   //applying borders to the sections
@@ -309,14 +332,20 @@ function updateReaction(e){
 
   e.preventDefault();
   // let likes = 0;
-    console.log(e);
+    // console.log(e);
     let reaction = "";
-    let likeCount = parseInt(e.path[2].childNodes[2].childNodes[0].textContent);
-    let idname = e.path[2].childNodes[2].childNodes[0].id;
-    let id = idname.slice(0, idname.indexOf('-'));
-    reaction = e.path[2].childNodes[2].childNodes[1].className;
+    // let likeCount = parseInt(e.path[2].childNodes[2].childNodes[0].textContent);
+    // let idname = e.path[2].childNodes[2].childNodes[0].id;
+    // let id = idname.slice(0, idname.indexOf('-'));
+    // reaction = e.path[2].childNodes[2].childNodes[1].className;
+
+    let count = parseInt(e.target.parentElement.childNodes[0].textContent);
+    let idname = e.target.id;
+    let id = idname.slice(0,idname.indexOf('-'));
+    reaction = e.target.className;
+
     console.log(idname, id, reaction);
-    likeCount++;
+    count++;
     // console.log(likeCount);
 
     // if(id != "" &&  id != undefined){
@@ -341,8 +370,9 @@ function updateReaction(e){
         console.log(err);
       });
 
-      let likeButton = document.getElementById(idname);
-      likeButton.textContent = likeCount.toString();
+      let likeButton = e.target.parentElement.childNodes[0];
+      console.log(likeButton);
+      likeButton.textContent = count.toString();
     // }
 
 }

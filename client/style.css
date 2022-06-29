@@ -387,3 +387,7 @@ background: white;
     .emojiDiv {
         display: flex;
     }
+
+    .emojicontainer {
+        display: flex;
+    }
