@@ -1,297 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Homepage</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <link href="style.css" rel="stylesheet"/>
-    <script defer src="index.js"></script>
-</head>
-<body>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+    <!-- <script src="index.js"></script> -->
+    <link rel="shortcut icon" href="./images/favicon.png" />
+    <script
+      src="https://kit.fontawesome.com/c6afa9010a.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
 
-        <!-- section navigation start -->
-        <div class="sidebar">
+    <!-- section navigation start -->
+    <div class="sidebar">
+      <div class="sidebarOption active">
+        <span class="material-icons">home</span>
+        <h2>Home</h2>
+      </div>
 
-            <div class="sidebarOption active">
-                <span class="material-icons">home</span>
-                <h2>Home</h2>
+      <div class="sidebarOption">
+        <span class="material-icons">newspaper</span>
+        <h2>News</h2>
+      </div>
+
+      <div class="sidebarOption">
+        <span class="material-icons">calendar_month</span>
+        <h2>Events</h2>
+      </div>
+
+      <div class="sidebarOption">
+        <span class="material-icons">notifications_none</span>
+        <h2>Notification</h2>
+      </div>
+
+      <div class="sidebarOption">
+        <span class="material-icons">bookmark_border</span>
+        <h2>Bookmarks</h2>
+      </div>
+
+      <button class="addPost">Post</button>
+    </div>
+    <!-- section navigation ends -->
+
+
+    <!-- section main starts -->
+
+    <div class="mainSection">
+      <div class="mainSectionHeader">
+        <h2>Home</h2>
+      </div>
+
+      <!-- add post box starts -->
+
+      <div class="postContainer">
+        <!-- this to be changed to a pop up form when selecting the addPost button -->
+        <form>
+          <div class="postInput">
+            <img src="./images/avatar-icon.jpg" alt="avatar-icon" />
+            <input class="postTitle" type="text" placeholder="Title" />
+          </div>
+
+          <textarea
+            class="postText"
+            id="postText"
+            placeholder="Share your thoughts"
+          ></textarea>
+
+          <span class="createPostFooter">
+            <span class="charCount" id="charCount">255 word(s) left</span>
+              <button class="addGifButton">GIF</button>
+              <button class="postButton">Post</button>
+          </span>
+        </form>
+      </div>
+
+      <!-- add post box ends -->
+
+      <!-- posts list start -->
+
+      <section class="post">
+
+        <!-- the below two elements namely postAvatar and postBody classes are hardcoded -->
+        <!-- <div class="postAvatar">
+          <img src="./images/avatar-icon.jpg" alt="avatar-icon" />
+        </div> -->
+
+        <div class="postBody">
+          <div class="postHeader">
+            <!-- <div class="postHeaderText">
+              <h3>
+                New post 
+                <span class="postHeaderSpecial">
+                  <span class="material-icons post__badge">verified</span>
+                </span>
+              </h3>
+            </div> -->
+
+            <!-- this is the p element as per Vincen't screen shoot -->
+            <!-- <div class="postHeaderDescription"> -->
+              <p class="postHeaderText">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <!-- </div> -->
+          </div>
+
+          <!-- this is the img tag as per Vincent's screen shoot -->
+          <img src="./images/attachement-example.jpeg" alt="gif" />
+
+          <!-- this is the emojiDiv as per Vincent's screen shoot -->
+          <div class="postFooter">
+            
+            <div class="emojiDiv">
+                <p>78</p>
+                <button><span class="material-icons"> favorite </span></button>
             </div>
 
-            <div class="sidebarOption">
-                <span class="material-icons">newspaper</span>
-                <h2>News</h2>
+            <div class="emojiDiv">
+                <p>85</p>
+                <button><span class="material-icons"> thumb_up </span></button>
             </div>
 
-            <div class="sidebarOption">
-                <span class="material-icons">calendar_month</span>
-                <h2>Events</h2>
+            <div class="emojiDiv">
+                <p>8</p>
+                <button><span class="material-icons"> thumb_down </span></button>
             </div>
+            
+          </div>
 
-            <div class="sidebarOption">
-                <span class="material-icons">notifications_none</span>
-                <h2>Notification</h2>
-            </div>
+          <!-- this section doesn't have a name in Vincent's screen shoot -->
+          <section class="addComment">
+            <textarea placeholder="Leave a comment"></textarea>
+            <button class="postCommentButton">Post</button>
+          </section>
 
-            <div class="sidebarOption">
-                <span class="material-icons">bookmark_border</span>
-                <h2>Bookmarks</h2>
-            </div>
+          <!-- this is the section with id="1-commentcontainer" as per Vincent's screen shot -->
+          <section class="commentsList">
+            <ul class="commentsListDisplay">
+                <li class="elementCommentsList">
+                    <p class="contentElementCommentsList"> Test</p>
+                </li>
+                <li class="elementCommentsList">
+                    <p class="contentElementCommentsList"> Test</p>
+                </li>
+                <li class="elementCommentsList">
+                    <p class="contentElementCommentsList"> Test </p>
+                </li>
+            </ul>
+          </section>
 
-            <button class="addPost">Post</button>
+
 
         </div>
-         <!-- section navigation ends -->
+       </section>
 
-         <!-- post pop-up starts -->
+      <!-- posts list ends -->
+    </div>
 
-         <!-- <div class="postPopup">
-            <div class="postPopupInput">
-                <img src="./images/avatar-icon.jpg" alt="avatar-icon">
-                <input type="text" />
-            </div>
-         </div> -->
+    <!-- section main ends -->
 
-         <!-- post pop-up ends -->
+    <!-- section special posts starts -->
+    <div class="specialPosts">
+      <div class="specialPostInput">
+        <span class="material-icons specialPostsSeacrchIcon"> search </span>
+        <input type="text" placeholder="Search posts" />
+      </div>
 
-         <!-- section main starts -->
+      <div class="specialPostContainer">
+        <h2>Most popular</h2>
+      </div>
 
-         <div class="mainSection">
-            <div class="mainSectionHeader">
-                <h2>Home</h2>
-            </div>
+      <div class="specialPostContainer">
+        <h2>Not to miss</h2>
+      </div>
+    </div>
 
-            <!-- post box starts -->
+    <!-- section special posts ends -->
 
-            <div class="postContainer">
-                <!-- this to be changed to a pop up form when selecting the addPost button -->
+    <!-- javascript and jquery script -->
 
-                <form>
-                    <div class="postInput">
-                        <img src="./images/avatar-icon.jpg" alt="avatar-icon">
-                        <input class="postTitle" type="text" placeholder="Title"/>
-                        <!-- <textare style="border: 1px solid black; width: 80px;" class="postText" placeholder="Share your thoughts"></textare> -->
-                        <!-- <input class="postContent" type="text" placeholder="Share your thoughts"/> -->
-                    </div>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script>
 
-                    <!-- assistance needed for the placeholder does not show -->
-
-
-                    <span class="createPostFooter">
-                        <textarea class="postText" placeholder="Share your thoughts" id="postText"></textarea>
-                        <span class="charCount" id="charCount">255</span>
-                        <button class="postButton" id="submitButton">Post</button>
-                        <p class="giphyAppend"></p>
-                    </span>
-                    <div class="container">
-                        <div class="title-search-bar">
-                        <div id="buttons"></div>
-                        <div class="search-bar">
-                            <input type="text" name="query" id="user-search" />
-                            <input id="submit" type="button" value="Submit" class="btn  btn-sm btn-success" />
-                            <input type="button" class="trending btn btn-sm btn-danger" value="See what's trending" />
-                        </div>
-                    </div>
-                    <div id="results"></div></div>
-
-
-                    <!-- <span class="alignFooter">
-                        <pre>255<button class="postButton">Post</button></pre>
-                    </span> -->
-
-                    <!-- <pre class="align">test <span class="material-icons"> favorite </span></pre> -->
-                </div>
-
-                </form>
-
-
-            <!-- post box ends -->
-
-            <!-- posts list start -->
-
-            <div class="post">
-
-                <!-- <div class="postAvatar">
-                    <img src="./images/avatar-icon.jpg" alt="avatar-icon">
-                </div>
-
-                <div class="postBody">
-                    <div class="postHeader">
-                        <div class="postHeaderText">
-                            <h3>Little cute penguine is here
-                              <span class="postHeaderSpecial">
-                                <span class="material-icons post__badge">verified</span>
-                             </span>
-                            </h3>
-                        </div>
-
-                        <div class="postHeaderDescription">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        </div>
-                    </div>
-
-                    <img src="./images/attachement-example.jpeg" alt="gift" />
-
-                    <div class="postFooter">
-                        <span class="material-icons"> favorite </span>
-                        <span class="material-icons"> thumb_up </span>
-                        <span class="material-icons"> thumb_down </span>
-                        <span class="material-icons"> report </span>
-                    </div>
-                </div> -->
-                <section class="parentsection">
-                <section>
-                  <p>first post</p>
-                  <img src="./images/attachement-example.jpeg" alt="gif">
-                  <section>
-                    <textarea class="postText" placeholder="Share your thoughts" id="postText"></textarea>
-                    <button id="submitComment">Submit</button>
-                  </section>
-                  <section id="commentcontainer">
-                    <ul id="comments">
-                      <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate, dolorem. Magnam rem minima distinctio, magni quae voluptatibus. Labore, expedita nam ullam debitis, perspiciatis, officia iste nostrum corrupti reprehenderit culpa ut?</li>
-                      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, dolorem porro incidunt maxime hic aliquid odit voluptatum rerum doloribus exercitationem mollitia nulla, corrupti harum pariatur. Praesentium nesciunt aut nam consectetur.</li>
-                      <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur, id! Harum veniam optio adipisci accusamus repellendus itaque doloremque sit deleniti ipsam hic iure magnam sunt sequi dolores, voluptate officiis nulla.</li>
-                    </ul>
-                  </section>
-
-                </section>
-                </section>
-
-            </div>
-
-            <!-- posts list ends -->
-
-         </div>
-
-         <!-- section main ends -->
-
-
-         <!-- section special posts starts -->
-         <div class="specialPosts">
-            <div class="specialPostInput">
-                <span class="material-icons specialPostsSeacrchIcon"> search </span>
-                <input type="text" placeholder="Search posts" />
-            </div>
-
-            <div class="specialPostContainer">
-                <h2>Most popular</h2>
-
-            </div>
-
-            <div class="specialPostContainer">
-                <h2>Not to miss</h2>
-
-            </div>
-
-
-         </div>
-
-         <!-- section special posts ends -->
-
-
-
-         <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-         <script>
-
-            let timer;
-$('#postText').on('input propertychange', counterLiveUpdate);
-function counterLiveUpdate() {
-    $('#charCount').text(255 - $('#postText').val().length);
-}
-
-// Initial Search Buttons
-var topics = ["Internet Cats", "Meme's", "Typing", "Space", "Rick and Morty"];
-function addSearchBtns() {
-  $("#buttons").html("");
-  for (i = 0; i < topics.length; i++) {
-    var $button = $("<input type='button' class='btn btn-sm search-btn' />");
-    $button.val(topics[i]);
-    $("#buttons").append($button);
-  }
-}
-addSearchBtns();
-
-$(document).on("click", ".btn", function() {
-  $("#results").html("");
-  // Beginning API call
-  var queryURL = "https://api.giphy.com/v1/gifs/search?";
-  var query;
-  var params = {
-    q: query,
-    limit: 10,
-    api_key: "aFFKTuSMjd6j0wwjpFCPXZipQbcnw3vB",
-    fmt: "json"
-  };
-  if ($(this).hasClass("search-btn")) {
-    query = $(this).val();
-  } else if ($("#user-search").val() !== "") {
-    query = $("#user-search").val();
-    topics.push(query);
-    if (topics.length > 6) {
-      topics.shift();
-    }
-    addSearchBtns();
-  }
-  params.q = query;
-
-  if ($(this).hasClass("trending")) {
-    queryURL = "https://api.giphy.com/v1/gifs/trending?";
-    delete params.q;
-  }
-  $.ajax({
-    url: queryURL + $.param(params),
-    method: "GET",
-    success: function(r) {
-      for (i = 0; i < params.limit; i++) {
-        var $img = $("<img>");
-        var $div = $("<div>");
-        var $rating = $("<h6>");
-        var gifObj = r.data[i];
-        var gif = gifObj.images;
-
-        // Image builder object
-        $img.attr({
-          // "width": "200px",
-          src: gif.fixed_height_still.url,
-          "data-animate": gif.fixed_height.url,
-          "data-still": gif.fixed_height_still.url,
-          "data-state": "still",
-          class: "gif"
-        });
-        // $div.attr("id", "gif-" + i);
-        $div.addClass("gif-box");
-        $rating.text("Rating: " + gifObj.rating);
-        $div.append($img, $rating);
-        $("#results").append($div);
+// Update the charCount
+      $("#postText").on("input propertychange", counterLiveUpdate);
+      function counterLiveUpdate() {
+        $("#charCount").text(255 - $("#postText").val().length  + " word(s) left" );
       }
+    </script>
 
-      $(".gif").on("mouseover", function() {
-        var state = $(this).attr("data-state");
-        if (state === "still") {
-          $(this).attr("src", $(this).attr("data-animate"));
-          $(this).attr("data-state", "animate");
-        } else {
-          $(this).attr("src", $(this).attr("data-still"));
-          $(this).attr("data-state", "still");
-        }
-      });
-
-
-      $(".gif").on("click", function() {
-        $(".giphyAppend").append
-        resultingurl = $(this).attr("src")
-        console.log(resultingurl);
-
-        $(".giphyAppend").text(resultingurl);
-
-        // trigger another function that uses resultingurl e.g myFunction(resultingurl); ???
-    });
-    }
-  });
-});
-
-         </script>
 </body>
+
 </html>
