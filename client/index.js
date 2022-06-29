@@ -268,7 +268,7 @@ function submitFunction(e) {
     let jsonData = {}
     // jsonData.header = header;
     jsonData.description = description;
-    jsonData.giphyURL = giphyURL;
+    jsonData.giphy = giphyURL;
     // jsonData.giphy = giphyData;
     console.log(jsonData)
     // jsonData.date = new Date();
