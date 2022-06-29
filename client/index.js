@@ -293,11 +293,51 @@ function submitFunction(e) {
   const htmlContent = document.createElement('p');
   const img = document.createElement('img');
 
+  //emoji Div
+  const emojiDiv = document.createElement("section");
+  const likeBtn = document.createElement("button");
+  const likes = document.createElement("p");
+  const dislikeBtn = document.createElement('button');
+  const dislikes = document.createElement("p");
+  const loveBtn = document.createElement('button');
+  const love = document.createElement("p");
+  const likeDiv = document.createElement('div');
+  const dislikeDiv = document.createElement('div');
+  const loveDiv = document.createElement('div');
+  //set newly created emoji counts to 0
+  likeBtn.textContent = "👍"
+  dislikeBtn.textContent = "👎"
+  loveBtn.textContent = "❤️"
+  likes.textContent = 0;
+  dislikes.textContent = 0;
+  love.textContent = 0;
+
+  //adding classes to emoji divs
+  likeBtn.setAttribute('class','like');
+  dislikeBtn.setAttribute('class','dislike');
+  loveBtn.setAttribute('class','love');
+  emojiDiv.setAttribute("class", "emojiDiv");
+  //appending emoji and count to respective parent div
+  likeDiv.appendChild(likes)
+  likeDiv.appendChild(likeBtn)
+  dislikeDiv.appendChild(dislikes)
+  dislikeDiv.appendChild(dislikeBtn)
+  loveDiv.appendChild(love)
+  loveDiv.appendChild(loveBtn)
+  //appending individual emoji divs to parent div
+  emojiDiv.appendChild(likeDiv);
+  emojiDiv.appendChild(dislikeDiv);
+  emojiDiv.appendChild(loveDiv);
+
+
+
   htmlContent.textContent = description;
   img.textContent = giphyURL;
+  img.src = giphyURL;
 
   container.appendChild(htmlContent);
   container.appendChild(img);
+  container.appendChild(emojiDiv)
 
   //textAreaContainer - where you input comments
   const textAreaContainer = document.createElement('section');
@@ -315,6 +355,11 @@ function submitFunction(e) {
   const commentContainer = document.createElement('section')
   const ul = document.createElement('ul');
   const li = document.createElement('li');
+
+  //add same class to all emoji divs for styling
+  likeDiv.setAttribute('class',"emojicontainer")
+  dislikeDiv.setAttribute('class',"emojicontainer")
+  loveDiv.setAttribute('class',"emojicontainer")
 
   ul.appendChild(li);
   commentContainer.appendChild(ul);
