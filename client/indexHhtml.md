@@ -81,7 +81,9 @@
 
                     <span class="createPostFooter">
                         <textarea class="postText" placeholder="Share your thoughts" id="postText"></textarea>
-                        <span class="charCount" id="charCount">255</span>
+                       
+                        <span class="charCount" id="charCount">255 word(s) left</span>
+
                         <button class="postButton" id="submitButton">Post</button>
                         <p class="giphyAppend"></p>
                     </span>
@@ -199,7 +201,7 @@
             let timer;
 $('#postText').on('input propertychange', counterLiveUpdate);
 function counterLiveUpdate() {
-    $('#charCount').text(255 - $('#postText').val().length);
+    $('#charCount').text(255 - $('#postText').val().length + " word(s) count");
 }
 
 // Initial Search Buttons

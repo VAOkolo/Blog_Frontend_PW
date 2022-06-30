@@ -11907,3 +11907,10 @@ body{
 .mar-top {
   margin-top: 15px;
 }
+
+#results {
+  display: flex;
+  width: auto;
+  overflow: scroll;
+  flex-direction: row;
+}

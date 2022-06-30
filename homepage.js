@@ -1,7 +1,11 @@
 /* <-------------------- assign elements to variables --------------------->*/
 
 // var header = document.getElementById("Header").value;
-let description = document.getElementById("postText").value;
+
+// let description = document.getElementById("postText").value;
+let description = document.getElementById("form-control").value;
+
+
 // var giphyData = document.getElementById("giphy").value;
 // var likeButton = document.getElementById("likeButton");
 // var loveButton = document.getElementById("loveButton");
@@ -26,7 +30,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 /* <--------------------  Post comments  --------------------->*/
-  let parentSection = document.querySelector('.parentsection')
+  // let parentSection = document.querySelector('.parentsection')
+
+  let parentSection = document.querySelector('.panel')
 
   // parentSection.addEventListener('click', printComment)
   // parentSection.addEventListener('click', updateReaction)
@@ -37,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
       e.preventDefault();
       // console.log(e);
 
-      if(e.target.innerText.includes('Submit')){
+      if(e.target.innerText.includes('Post')){
         console.log('running printComment');
         printComment(e);
       } else if(e.target.parentElement.className.includes('emojicontainer')) {
@@ -63,14 +69,14 @@ function printComment(e){
     e.preventDefault();
     // console.log(e);
     let submitButton = e.path[0].id;
-    // console.log(submitButton);
-    let postid = submitButton.slice(0, submitButton.indexOf('-'))
+    // console.log(submit button);
+    let postid = submit.slice(0, submit.indexOf('-'))
     let comment = e.path[1].childNodes[0].value;
     // console.log(comment);
     // console.log(postid)
 
     //add undefined after ""
-    if(submitButton != "" && postid != "" && comment != "" && submitButton != undefined && postid != undefined && comment != undefined){
+    if(submit != "" && postid != "" && comment != "" && submit != undefined && postid != undefined && comment != undefined){
     // console.log(postid);
 
         const url = `http://localhost:5000/posts/${postid}/comment`  // The url for post req to be sent to
@@ -133,18 +139,42 @@ function appendResults(data) {
 function appendResult(itemData) {
   // console.log(itemData.header);
   //postContainer is where all posts will sit
-  const postContainer = document.querySelector('.parentsection');
-  //container is where all post elements will sit
-  const container = document.createElement('section');
-  const content = document.createElement('p');
-  const img = document.createElement('img');
-  const textAreaSection = document.createElement('section');
-  const textArea = document.createElement('TEXTAREA');
-  const submitButton = document.createElement('button');
+  // const postContainer = document.querySelector('.parentsection');
 
-  //comment parts and build
-  const commentContainer = document.createElement('section');
-  commentContainer.setAttribute('id', `${itemData.id}-commentcontainer`);
+  const panel = document.querySelector('.panel') // the list of posts and comments
+
+  const divPanelBody = document.createElement('div'); // the content of the list of posts and comments
+  const divPanelBodyContent = document.createElement('div'); // one post with comments
+  const postAvatar = document.createElement('a'); // one post avatar section
+  const avatarImg = document.createElement('img'); //one avatar
+  const divMediaBodyPost = document.createElement('div'); // one post content 
+  const postContentText = document.createElement('p'); // one post text content
+  const postContentImg = document.createElement('img'); // one post giphy content
+
+ const divPadVerPost = document.createElement('div'); // one post footer area
+ const spanBadge = document.createElement('span'); // one post badge
+//  const badgeIcon = document.createElement('')  - create the badge's icon
+ const btnGroup = document.createElement('div'); //this represents the reactions
+
+ const divPanelAddComment = document.createElement('div'); // section to add comment to the post
+//  cretated above const divPanelBodyContent = document.createElement('div'); - body section of the previous section
+const formControl =  document.createElement('TEXTAREA'); //text area for comment input
+const divMarTopClearfix = document.createElement('div'); //the footer of add comment/post
+const submit = document.createElement('button'); //submit button
+const commentFooterIcons = document.createElement('a'); // to redo
+  
+//comments
+  const div = document.createElement('div'); // has no class
+  const divMediaBlock = document.createElement('div');
+  const commentAvatar = document.createElement('a');
+  const divMediaBodyComment = document.createElement('div');
+  const commentContentText = document.createElement('p');
+  const divPadVerComment = document.createElement('div');
+
+
+
+
+  div.setAttribute('id', `${itemData.id}-div`);
   const ul = document.createElement('ul');
   ul.setAttribute('id', `${itemData.id}-commentul`);
   const commentArray = itemData.comments;
@@ -167,7 +197,7 @@ container.setAttribute('id', itemData.id)
 //updating dating classes to merge with Daiana's styling
 container.setAttribute('class','postBody');
 content.setAttribute('class','postHeaderText');
-textAreaSection.setAttribute('class','pannel');
+textAreaSection.setAttribute('class','addComment');
 commentContainer.setAttribute('class','commentList');
 ul.setAttribute('class','commentsListDisplay');
 

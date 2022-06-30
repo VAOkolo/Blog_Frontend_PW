@@ -115,12 +115,26 @@
 <div class="col-md-12 bootstrap snippets">
 <div class="panel">
   <div class="panel-body">
-    <textarea class="form-control" rows="2" placeholder="What are you thinking?"></textarea>
+    <textarea class="form-control" id="postText" rows="2" placeholder="What are you thinking?"></textarea>
+    <span class="charCount" id="charCount">255 word(s) left</span>
+    <p class="giphyAppend"></p>
     <div class="mar-top clearfix">
-      <button class="btn btn-sm btn-primary pull-right" type="submit"><i class="fa fa-pencil fa-fw"></i> Post</button>
+      <!-- <button class="btn btn-sm btn-primary pull-right" type="submit"><i class="fa fa-pencil fa-fw"></i> Post</button>
       <a class="btn btn-trans btn-icon fa fa-video-camera add-tooltip" href="#"></a>
       <a class="btn btn-trans btn-icon fa fa-camera add-tooltip" href="#"></a>
-      <a class="btn btn-trans btn-icon fa fa-file add-tooltip" href="#"></a>
+      <a class="btn btn-trans btn-icon fa fa-file add-tooltip" href="#"></a> -->
+    
+      <button class="btn btn-sm btn-primary pull-right" type="submit"><i class="fa fa-pencil fa-fw"></i> Post</button>
+      <div class="giphyContainer">
+        <div class="title-search-bar">
+        <div id="buttons"></div>
+        <div class="search-bar">
+            <input type="text" name="query" id="user-search" />
+            <input id="submit" type="button" value="Submit" class="btn  btn-sm btn-success" />
+            <input type="button" class="trending btn btn-sm btn-danger" value="See what's trending" />
+        </div>
+    </div>
+    <div class="giphyResults" id="results"></div></div>
     </div>
   </div>
 </div>
@@ -417,6 +431,109 @@
     <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
     <!-- <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script> -->
-</body>
+
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script>
+
+       let timer;
+$('#postText').on('input propertychange', counterLiveUpdate);
+function counterLiveUpdate() {
+$('#charCount').text(255 - $('#postText').val().length + " word(s) count");
+}
+
+// Initial Search Buttons
+var topics = ["Internet Cats", "Meme's", "Typing", "Space", "Rick and Morty"];
+function addSearchBtns() {
+$("#buttons").html("");
+for (i = 0; i < topics.length; i++) {
+var $button = $("<input type='button' class='btn btn-sm search-btn' />");
+$button.val(topics[i]);
+$("#buttons").append($button);
+}
+}
+addSearchBtns();
+
+$(document).on("click", ".btn", function() {
+$("#results").html("");
+// Beginning API call
+var queryURL = "https://api.giphy.com/v1/gifs/search?";
+var query;
+var params = {
+q: query,
+limit: 10,
+api_key: "aFFKTuSMjd6j0wwjpFCPXZipQbcnw3vB",
+fmt: "json"
+};
+if ($(this).hasClass("search-btn")) {
+query = $(this).val();
+} else if ($("#user-search").val() !== "") {
+query = $("#user-search").val();
+topics.push(query);
+if (topics.length > 6) {
+ topics.shift();
+}
+addSearchBtns();
+}
+params.q = query;
+
+if ($(this).hasClass("trending")) {
+queryURL = "https://api.giphy.com/v1/gifs/trending?";
+delete params.q;
+}
+$.ajax({
+url: queryURL + $.param(params),
+method: "GET",
+success: function(r) {
+ for (i = 0; i < params.limit; i++) {
+   var $img = $("<img>");
+   var $div = $("<div>");
+   var $rating = $("<h6>");
+   var gifObj = r.data[i];
+   var gif = gifObj.images;
+
+   // Image builder object
+   $img.attr({
+     // "width": "200px",
+     src: gif.fixed_height_still.url,
+     "data-animate": gif.fixed_height.url,
+     "data-still": gif.fixed_height_still.url,
+     "data-state": "still",
+     class: "gif"
+   });
+   // $div.attr("id", "gif-" + i);
+   $div.addClass("gif-box");
+   $rating.text("Rating: " + gifObj.rating);
+   $div.append($img, $rating);
+   $("#results").append($div);
+ }
+
+ $(".gif").on("mouseover", function() {
+   var state = $(this).attr("data-state");
+   if (state === "still") {
+     $(this).attr("src", $(this).attr("data-animate"));
+     $(this).attr("data-state", "animate");
+   } else {
+     $(this).attr("src", $(this).attr("data-still"));
+     $(this).attr("data-state", "still");
+   }
+ });
+
+
+ $(".gif").on("click", function() {
+   $(".giphyAppend").append
+   resultingurl = $(this).attr("src")
+   console.log(resultingurl);
+
+   $(".giphyAppend").text(resultingurl);
+
+   // trigger another function that uses resultingurl e.g myFunction(resultingurl); ???
+});
+}
+});
+});
+
+    </script>
+
+  </body>
 
 </html>
