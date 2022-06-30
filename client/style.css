@@ -27,14 +27,14 @@ body{
     padding: 15px;
 }
 
-
-.material-icons {
+/* doesn't work */
+/* .material-icons {
   font-variation-settings:
   'FILL' 0,
   'wght' 400,
   'GRAD' 0,
   'opsz' 48
-}
+} */
 
 
 .sidebarOption h2{
@@ -69,8 +69,8 @@ body{
     display: flex;
     height: 100vh;
     max-width: 1300px;
-    /* margin-left: auto; */
-    /* margin-right: auto;
+    /* margin-left: auto;
+    margin-right: auto;
     padding: 0 10px; */
 }
 
@@ -79,11 +79,8 @@ body{
     flex: 0.2;
 }
 
-<<<<<<< HEAD
 /* postPopup */
-=======
->>>>>>> dd289ca54bd0df7a839d495ab1d304d7f3a518c7
-.postPopUp {
+/* .postPopUp {
     position: absolute;
     min-width: 100%;
     min-height: 100vh;
@@ -93,20 +90,55 @@ body{
     justify-content: center;
     align-items: center;
     z-index: 200;
-<<<<<<< HEAD
-    
 }
 
-=======
-}
->>>>>>> dd289ca54bd0df7a839d495ab1d304d7f3a518c7
 .postPopUpContent{
+    display: flex;
     width: 500px;
     height: 300px;
     background-color: white;
     border-radius: 20px;
-    /* opacity: 0.7; */
 }
+
+.closePopUp{
+    background-color: white;
+    border: none;
+    color: gray;
+    height: 50px;
+    width: 50px;
+    font-size: 14px;
+    margin-left: 32%;
+    margin-top: 5px;
+} */
+
+.searchGif {
+    display: flex;
+    align-items: center;
+    background-color: var(--navigation-background);
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-left: 20px;
+    width: 260px;
+    height: 35px;
+}
+
+.searchGifButton{
+    background-color: white;
+    border: none;
+    color: gray;
+    height: 30px;
+    width: 80px;
+    font-size: 16px;
+    margin-left: 30%;
+}
+
+.searchGifButton:hover {
+    color: gray;
+    background-color: var(--navigation-background);
+    border-radius: 10px;
+}
+
 
 
 /* main section */
@@ -186,18 +218,14 @@ body{
     color: gray;
     min-width: 640px;
     max-width: 640px;
-<<<<<<< HEAD
     min-height: 140px;
     max-height: 140px;
-=======
->>>>>>> dd289ca54bd0df7a839d495ab1d304d7f3a518c7
     height: 100px;
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 10px;
     border: none;
     outline: none;
-
 }
 
 ::placeholder {
@@ -210,8 +238,6 @@ body{
     margin-left: 10px;
 }
 
-
-
 .postButton {
     background-color: var(--navigation-color);
     border: none;
@@ -222,7 +248,7 @@ body{
     height: 35px;
 }
 
-.addGift{
+.addGifButton{
     background-color: white;
     /* border: 1px solid gray; */
     border: none;
@@ -230,7 +256,7 @@ body{
     height: 30px;
     width: 30px;
     font-size: 14px;
-    margin-left: 59%;
+    margin-left: 60%;
     /* margin-right: 10px;  */
 }
 
@@ -255,11 +281,16 @@ body{
     /* align-items: left; */
     border-bottom: 1px solid var(--navigation-background);
     padding-bottom: 10px;
+    margin-left: 65px;
 }
 
 .postHeaderText {
     display: block;
     align-items: flex-start;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: gray;
 }
 
 .postBody img {
@@ -275,24 +306,86 @@ body{
     margin-right: 30px;
 }
 
-.postHeaderBadge {
+.emojiDiv {
+    display: flex;
+    align-items: center;
+}
+
+.emojiDiv p{
+    font-size: 18px;
+}
+
+.emojiDiv button {
+    background-color: white;
+    border: none;
+    padding-left: 7px;
+}
+
+
+.addComment textarea{
+    display: block;
+    margin-top: 10px;
+    min-width: 610px;
+    min-height: 70px;
+    max-width: 610px;
+    max-height: 70px;
+    border-radius: 10px;
+    border-color: lightgrey;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: gray;
+    padding-top: 10px;
+    outline: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+}
+
+.addComment button{
+    display: block;
+    margin-top: 10px;
+    background-color: var(--navigation-color);
+    border: none;
+    color: white;
+    font-weight: 900;
+    border-radius: 30px;
+    width: 90px;
+    height: 35px;
+    margin-left: 520px;
+}
+
+.commentsList{
+    display: block;
+    margin-top: 10px;
+    max-width: 610px;
+}
+
+.commentsListDisplay{
+    font-size: 18px;
+    list-style-type: none;
+}
+
+.elementCommentsList {
+    margin-top: 10px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    height: fit-content;
+    padding-top: 5px;
+    padding-left: 20px;
+    color: gray;
+}
+
+/* .postHeaderBadge {
     font-weight: 600;
     font-size: 12px;
     color: gray;
-}
-.md-48 {
-    font-weight: 600;
-    font-size: 40px !important;
-    color: gray;
-    /* margin-left: 40px; */
-}
+} */
 
-
-
-.postHeaderText h3{
+/* .postHeaderText h3{
     font-size: 18px;
     margin-bottom: 5px;
-}
+} */
+
 
 .postMainText {
     margin-bottom: 10px;
@@ -323,7 +416,7 @@ body{
     margin-left: 20px;
 }
 
-.specialPostInput input {
+.specialPostInput input, .searchGif input {
     border: none;
     background-color: var(--navigation-background);
     outline: none;
@@ -341,70 +434,29 @@ body{
     font-weight: 800;
 }
 
-<<<<<<< HEAD
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 100; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
 
 
-=======
-
-/* giphy */
-.container {
-    overflow: scroll;
-    display: inline-block;
-    height: auto;
-    align-items: center;
-    justify-content: center;
-}
-
-
-.title-search-bar {
-    text-align: center;
-
-
-}
-    .search-btn {
-        margin: 3px;
+    .emojiDiv {
+        display: flex;
     }
-    #submit,
-    .trending {
-        margin-bottom: 6px;
-    }
-    .search-bar {
-        margin-top: 0.4rem;
+
+    .emojicontainer {
+        display: flex;
     }
 
 
-#results {
-display: flex;
-justify-content: center;
-max-width: 30vw;
-background: white;
-}
-
-.gif-box {
-    margin: 0.5rem;
-    display: inline-block;
-    border: 1px solid black;
-    height: auto;
-    width: auto;
-}
-    img {
-        display: block;
+    #results {
+        display: flex;
+        width: 500px;
+        overflow: scroll;
+        flex-direction: row;
     }
-    h6 {
-        font-weight: bold;
+
+    .giphyContainer {
+        margin: auto;
+        width: 500px;
+        display: flex;
+        justify-content: center;
         text-align: center;
+        flex-direction: column;
     }
->>>>>>> dd289ca54bd0df7a839d495ab1d304d7f3a518c7

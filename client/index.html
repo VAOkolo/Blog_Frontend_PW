@@ -7,7 +7,7 @@
     <title>Homepage</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link href="style.css" rel="stylesheet"/>
-    <script defer src="./index.js"></script>
+    <script defer src="index.js"></script>
 </head>
 <body>
 
@@ -76,15 +76,24 @@
                     </div>
 
                     <!-- assistance needed for the placeholder does not show -->
+<<<<<<< HEAD
                     <textarea class="postText" id="postText" placeholder="Share your thoughts" id="postText"></textarea>
+=======
+>>>>>>> staging
+
 
                     <span class="createPostFooter">
-
+                        <textarea class="postText" placeholder="Share your thoughts" id="postText"></textarea>
                         <span class="charCount" id="charCount">255</span>
+<<<<<<< HEAD
                         <input type="submit" value="submit" class="postButton" id="submitButton">
 
+=======
+                        <button class="postButton" id="submitButton">Post</button>
+                        <p class="giphyAppend"></p>
+>>>>>>> staging
                     </span>
-                    <div class="container">
+                    <div class="giphyContainer">
                         <div class="title-search-bar">
                         <div id="buttons"></div>
                         <div class="search-bar">
@@ -111,7 +120,8 @@
             <!-- posts list start -->
 
             <div class="post">
-                <div class="postAvatar">
+
+                <!-- <div class="postAvatar">
                     <img src="./images/avatar-icon.jpg" alt="avatar-icon">
                 </div>
 
@@ -138,7 +148,25 @@
                         <span class="material-icons"> thumb_down </span>
                         <span class="material-icons"> report </span>
                     </div>
-                </div>
+                </div> -->
+                <section class="parentsection">
+                <section>
+                  <p>first post</p>
+                  <img src="./images/attachement-example.jpeg" alt="gif">
+                  <section>
+                    <textarea class="postText" placeholder="Share your thoughts" id="postText"></textarea>
+                    <button id="submitComment">Submit</button>
+                  </section>
+                  <section id="commentcontainer">
+                    <ul id="comments">
+                      <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate, dolorem. Magnam rem minima distinctio, magni quae voluptatibus. Labore, expedita nam ullam debitis, perspiciatis, officia iste nostrum corrupti reprehenderit culpa ut?</li>
+                      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, dolorem porro incidunt maxime hic aliquid odit voluptatum rerum doloribus exercitationem mollitia nulla, corrupti harum pariatur. Praesentium nesciunt aut nam consectetur.</li>
+                      <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur, id! Harum veniam optio adipisci accusamus repellendus itaque doloremque sit deleniti ipsam hic iure magnam sunt sequi dolores, voluptate officiis nulla.</li>
+                    </ul>
+                  </section>
+
+                </section>
+                </section>
 
             </div>
 
@@ -175,9 +203,6 @@
 
          <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
          <script>
-
-
-
 
             let timer;
 $('#postText').on('input propertychange', counterLiveUpdate);
@@ -262,10 +287,14 @@ $(document).on("click", ".btn", function() {
         }
       });
 
-      resultingurl = ''
+
       $(".gif").on("click", function() {
+        $(".giphyAppend").append
         resultingurl = $(this).attr("src")
         console.log(resultingurl);
+
+        $(".giphyAppend").text(resultingurl);
+
         // trigger another function that uses resultingurl e.g myFunction(resultingurl); ???
     });
     }
