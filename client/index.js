@@ -155,6 +155,7 @@ function appendResult(itemData) {
     let li = document.createElement('li');
     li.textContent = commentArray[i].content;
     ul.appendChild(li);
+    li.setAttribute('class','elementCommentsList');
   }
   //append ul full of li comments as child element of comment container
   // console.log(ul);
@@ -162,12 +163,22 @@ function appendResult(itemData) {
 
   // container.setAttribute('class', 'searchresult');
 container.setAttribute('id', itemData.id)
+
+//updating dating classes to merge with Daiana's styling
+container.setAttribute('class','postBody');
+content.setAttribute('class','postHeaderText');
+textAreaSection.setAttribute('class','addComment');
+commentContainer.setAttribute('class','commentList');
+ul.setAttribute('class','commentsListDisplay');
+
+
 textArea.setAttribute('class', "comments")
 submitButton.setAttribute('id', `${itemData.id}-submitcomment`)
 submitButton.setAttribute('type', 'submit');
 
   // console.log(itemData.id)
   content.textContent = itemData.content;
+
   const emojiDiv = document.createElement("section");
   const likeBtn = document.createElement("button");
   const likes = document.createElement("p");
@@ -235,7 +246,7 @@ submitButton.setAttribute('type', 'submit');
 
 
   //applying borders to the sections
-  container.style.border = "2px dotted red"
+  // container.style.border = "2px dotted red"
 
   //push list items which are comments into ul
 
@@ -267,7 +278,7 @@ function submitFunction(e) {
     const url = "http://localhost:5000/posts/post"  // The url for post req to be sent to
     let jsonData = {}
     // jsonData.header = header;
-    jsonData.description = description;
+    jsonData.content = description;
     jsonData.giphy = giphyURL;
     // jsonData.giphy = giphyData;
     console.log(jsonData)
@@ -311,6 +322,7 @@ function submitFunction(e) {
   likes.textContent = 0;
   dislikes.textContent = 0;
   love.textContent = 0;
+
 
   //adding classes to emoji divs
   likeBtn.setAttribute('class','like');

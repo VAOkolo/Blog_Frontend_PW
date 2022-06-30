@@ -275,9 +275,11 @@ body{
     height: 40px;
 }
 
-.post {
+/* changed from post to parentsection */
+.parentsection {
     display: flex;
     align-items: flex-start;
+    flex-direction: column;
     /* align-items: left; */
     border-bottom: 1px solid var(--navigation-background);
     padding-bottom: 10px;
@@ -299,23 +301,25 @@ body{
     border-radius: 20px;
 }
 
-.postFooter {
+/* changed from postFooter */
+.emojiDiv {
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
     margin-right: 30px;
 }
 
-.emojiDiv {
+/* emojiDiv to emojicontainer */
+.emojicontainer {
     display: flex;
     align-items: center;
 }
 
-.emojiDiv p{
+.emojicontainer p{
     font-size: 18px;
 }
 
-.emojiDiv button {
+.emojicontainer button {
     background-color: white;
     border: none;
     padding-left: 7px;
@@ -395,6 +399,7 @@ body{
 .postBody {
     flex: 1;
     padding: 10px ;
+    border: 2px dotted blue;
 }
 
 .postAvatar{
