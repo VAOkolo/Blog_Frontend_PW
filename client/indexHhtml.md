@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.png" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link href="style.css" rel="stylesheet"/>
     <script defer src="index.js"></script>
@@ -80,7 +81,9 @@
 
                     <span class="createPostFooter">
                         <textarea class="postText" placeholder="Share your thoughts" id="postText"></textarea>
-                        <span class="charCount" id="charCount">255</span>
+                       
+                        <span class="charCount" id="charCount">255 word(s) left</span>
+
                         <button class="postButton" id="submitButton">Post</button>
                         <p class="giphyAppend"></p>
                     </span>
@@ -198,7 +201,7 @@
             let timer;
 $('#postText').on('input propertychange', counterLiveUpdate);
 function counterLiveUpdate() {
-    $('#charCount').text(255 - $('#postText').val().length);
+    $('#charCount').text(255 - $('#postText').val().length + " word(s) count");
 }
 
 // Initial Search Buttons
