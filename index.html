@@ -1,539 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Landing Page - Start Bootstrap Theme</title>
-    <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="./client/assets/favicon.png" />
-    <!-- Bootstrap icons-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet"
-        type="text/css" />
-    <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
-        type="text/css" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="./client/css/styles.css" rel="stylesheet" />
-    <script defer src="homepage.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.png" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <!-- <link href="./client/css/styles.css" rel="stylesheet"/> -->
+    <link href="./client/css/indexStyle.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script defer src="./homepage.js"></script>
 </head>
-
 <body>
-    <!-- Navigation-->
-    <nav class="navbar navbar-light bg-light static-top">
-        <div class="container">
-            <a class="navbar-brand" href="#!">MUZE</a>
-            <a class="btn btn-primary" href="#signup">Sign Up</a>
-        </div>
-    </nav>
-    <!-- Masthead-->
-    <header class="masthead">
-        <div class="container position-relative">
-            <div class="row justify-content-center">
-                <div class="col-xl-6">
-                    <div class="text-center text-white">
-                        <!-- Page heading-->
-                        <h1 class="mb-5">Share your thoughs!</h1>
-                        <!-- Add new post form-->
-                        <!-- to get an API token!-->
-                        <form class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN">
-                            <!-- Post input-->
-                            <div class="row">
-                                <div class="col">
-                                    <input class="form-control form-control-lg" id="postInput" type="email"
-                                        placeholder="Your message" data-sb-validations="required,email" />
-                                    <div class="invalid-feedback text-white" data-sb-feedback="postInput:required">
-                                        Please ensure the post has text.</div>
-                                </div>
-                                <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton"
-                                        type="submit">Post</button></div>
-                            </div>
-                            <!-- Submit success message-->
-                            <!---->
-                            <!-- This is what your users will see when the post-->
-                            <!-- has successfully submitted-->
-                            <div class="d-none" id="submitSuccessMessage">
-                                <div class="text-center mb-3">
-                                    <div class="fw-bolder">Post successfully submited!</div>
-                                </div>
-                            </div>
-                            <!-- Submit error message-->
-                            <!---->
-                            <!-- This is what your users will see when there is-->
-                            <!-- an error submitting the post-->
-                            <div class="d-none" id="submitErrorMessage">
-                                <div class="text-center text-danger mb-3">Error sending post!</div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+
+        <!-- section navigation start -->
+        <div class="sidebar">
+
+            <div class="sidebarOption active">
+                <span class="material-icons">home</span>
+                <h2>Home</h2>
             </div>
+
+            <div class="sidebarOption">
+                <span class="material-icons">newspaper</span>
+                <h2>News</h2>
+            </div>
+
+            <div class="sidebarOption">
+                <span class="material-icons">calendar_month</span>
+                <h2>Events</h2>
+            </div>
+
+            <div class="sidebarOption">
+                <span class="material-icons">notifications_none</span>
+                <h2>Notification</h2>
+            </div>
+
+            <div class="sidebarOption">
+                <span class="material-icons">bookmark_border</span>
+                <h2>Bookmarks</h2>
+            </div>
+
+            <button class="addPost">Post</button>
+
         </div>
-    </header>
-    <!-- Icons Grid-->
-    <section class="features-icons bg-light text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                        <!-- <div class="features-icons-icon d-flex"><i class="bi-window m-auto text-primary"></i></div> -->
-                        <div class="features-icons-icon d-flex"><i class="material-icons m-auto text-primary">feed</i>
+         <!-- section navigation ends -->
+
+         <!-- post pop-up starts -->
+
+         <!-- <div class="postPopup">
+            <div class="postPopupInput">
+                <img src="./images/avatar-icon.jpg" alt="avatar-icon">
+                <input type="text" />
+            </div>
+         </div> -->
+
+         <!-- post pop-up ends -->
+
+         <!-- section main starts -->
+
+         <div class="mainSection">
+            <div class="mainSectionHeader">
+                <h2>Home</h2>
+            </div>
+
+            <!-- post box starts -->
+
+            <div class="postContainer">
+                <!-- this to be changed to a pop up form when selecting the addPost button -->
+
+                <form>
+                    <div class="postInput">
+                        <img src="./images/avatar-icon.jpg" alt="avatar-icon">
+                        <input class="postTitle" type="text" placeholder="Title"/>
+                        <!-- <textare style="border: 1px solid black; width: 80px;" class="postText" placeholder="Share your thoughts"></textare> -->
+                        <!-- <input class="postContent" type="text" placeholder="Share your thoughts"/> -->
+                    </div>
+
+                    <!-- assistance needed for the placeholder does not show -->
+
+
+                    <span class="createPostFooter">
+                        <textarea class="postText" placeholder="Share your thoughts" id="postText"></textarea>
+                       
+                        <span class="charCount" id="charCount">255 word(s) left</span>
+
+                        <button class="postButton" id="submitButton">Post</button>
+                        <p class="giphyAppend"></p>
+                    </span>
+                    <div class="giphyContainer">
+                        <div class="title-search-bar">
+                        <div id="buttons"></div>
+                        <div class="search-bar">
+                            <input type="text" name="query" id="user-search" />
+                            <input id="submit" type="button" value="Submit" class="btn  btn-sm btn-success" />
+                            <input type="button" class="trending btn btn-sm btn-danger" value="See what's trending" />
                         </div>
-                        <h3>News</h3>
-                        <p class="lead mb-0">Things that you need to know!</p>
                     </div>
+                    <div id="results"></div></div>
+
+
+                    <!-- <span class="alignFooter">
+                        <pre>255<button class="postButton">Post</button></pre>
+                    </span> -->
+
+                    <!-- <pre class="align">test <span class="material-icons"> favorite </span></pre> -->
                 </div>
-                <div class="col-lg-4">
-                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                        <!-- <div class="features-icons-icon d-flex"><i class="bi-layers m-auto text-primary"></i></div> -->
-                        <div class="features-icons-icon d-flex"><i class="material-icons m-auto text-primary">event</i>
+
+                </form>
+
+
+            <!-- post box ends -->
+
+            <!-- posts list start -->
+
+            <div class="post">
+
+                <!-- <div class="postAvatar">
+                    <img src="./images/avatar-icon.jpg" alt="avatar-icon">
+                </div>
+
+                <div class="postBody">
+                    <div class="postHeader">
+                        <div class="postHeaderText">
+                            <h3>Little cute penguine is here
+                              <span class="postHeaderSpecial">
+                                <span class="material-icons post__badge">verified</span>
+                             </span>
+                            </h3>
                         </div>
-                        <h3>Events</h3>
-                        <p class="lead mb-0">Discover new talent, and catch up with the community!</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="features-icons-item mx-auto mb-0 mb-lg-3">
-                        <!-- <div class="features-icons-icon d-flex"><i class="bi-terminal m-auto text-primary"></i></div> -->
-                        <div class="features-icons-icon d-flex"><i
-                                class="material-icons m-auto text-primary">auto_awesome</i></div>
-                        <h3>Awards</h3>
-                        <p class="lead mb-0">Do not miss out on the best performances!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Image Showcases-->
-    <section class="showcase"> 
 
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-<div class="container bootdey">
-<div class="col-md-12 bootstrap snippets">
-<div class="panel">
-  <div class="panel-body">
-    <textarea class="form-control" id="postText" rows="2" placeholder="What are you thinking?"></textarea>
-    <span class="charCount" id="charCount">255 word(s) left</span>
-    <p class="giphyAppend"></p>
-    <div class="mar-top clearfix">
-      <!-- <button class="btn btn-sm btn-primary pull-right" type="submit"><i class="fa fa-pencil fa-fw"></i> Post</button>
-      <a class="btn btn-trans btn-icon fa fa-video-camera add-tooltip" href="#"></a>
-      <a class="btn btn-trans btn-icon fa fa-camera add-tooltip" href="#"></a>
-      <a class="btn btn-trans btn-icon fa fa-file add-tooltip" href="#"></a> -->
-    
-      <button class="btn btn-sm btn-primary pull-right" type="submit"><i class="fa fa-pencil fa-fw"></i> Post</button>
-      <div class="giphyContainer">
-        <div class="title-search-bar">
-        <div id="buttons"></div>
-        <div class="search-bar">
-            <input type="text" name="query" id="user-search" />
-            <input id="submit" type="button" value="Submit" class="btn  btn-sm btn-success" />
-            <input type="button" class="trending btn btn-sm btn-danger" value="See what's trending" />
-        </div>
-    </div>
-    <div class="giphyResults" id="results"></div></div>
-    </div>
-  </div>
-</div>
-<div class="panel">
-    <div class="panel-body">
-    <!-- Newsfeed Content -->
-    <!--===================================================-->
-    <div class="media-block pad-all">
-        <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar1.png"></a>
-        <div class="media-body">
-          <!-- <div class="mar-btm">
-            <a href="#" class="btn-link text-semibold media-heading box-inline">Last night outstanding performance</a>
-            <p class="text-muted text-sm"><i class="fa fa-mobile fa-lg"></i> - From Mobile - 11 min ago</p>
-          </div> -->
-          <p>Lorem ipsum dolor sit amet.</p>
-          <img class="img-responsive thumbnail" src="https://via.placeholder.com/400x300" alt="Image">
-          <div class="pad-ver">
-            <span class="tag tag-sm"><i class="fa fa-heart text-danger"></i> 1450 Likes</span>
-            <div class="btn-group">
-              <a class="btn btn-sm btn-default btn-hover-success" href="#"><i class="fa fa-thumbs-up"></i></a>
-              <a class="btn btn-sm btn-default btn-hover-danger" href="#"><i class="fa fa-thumbs-down"></i></a>
-              <a class="btn btn-sm btn-default btn-hover-danger" href="#"><i class="fa fa-heart"></i></a>
-            </div>
-            <!-- <a class="btn btn-sm btn-default btn-hover-primary" href="#">Comment</a> -->
-          </div>
-
-          <div class="panel">
-            <div class="panel-body">
-              <textarea class="form-control" rows="2" placeholder="What are you thinking?"></textarea>
-              <div class="mar-top clearfix">
-                <button class="btn btn-sm btn-primary pull-right" type="submit"><i class="fa fa-pencil fa-fw"></i> Post</button>
-                <a class="btn btn-trans btn-icon fa fa-video-camera add-tooltip" href="#"></a>
-                <a class="btn btn-trans btn-icon fa fa-camera add-tooltip" href="#"></a>
-                <a class="btn btn-trans btn-icon fa fa-file add-tooltip" href="#"></a>
-              </div>
-            </div>
-          </div>
-          
-
-        <!-- Comments -->
-        <div>
-          <div class="media-block">
-            <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar2.png"></a>
-            <div class="media-body">
-              <!-- <div class="mar-btm">
-                <a href="#" class="btn-link text-semibold media-heading box-inline">Could it be talent and hard work?</a>
-                <p class="text-muted text-sm"><i class="fa fa-mobile fa-lg"></i> - From Mobile - 7 min ago</p>
-              </div> -->
-              <p>Sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-              <div class="pad-ver">
-                <div class="btn-group">
-                  <a class="btn btn-sm btn-default btn-hover-success active" href="#"><i class="fa fa-thumbs-up"></i> You Like it</a>
-                  <a class="btn btn-sm btn-default btn-hover-danger" href="#"><i class="fa fa-thumbs-down"></i></a>
-                  <a class="btn btn-sm btn-default btn-hover-danger" href="#"><i class="fa fa-heart"></i></a>
-                </div>
-                <a class="btn btn-sm btn-default btn-hover-primary" href="#">Comment</a>
-              </div>
-              
-              <!-- <div class="panel">
-                <div class="panel-body">
-                  <textarea class="form-control" rows="2" placeholder="What are you thinking?"></textarea>
-                  <div class="mar-top clearfix">
-                    <button class="btn btn-sm btn-primary pull-right" type="submit"><i class="fa fa-pencil fa-fw"></i> Post</button>
-                    <a class="btn btn-trans btn-icon fa fa-video-camera add-tooltip" href="#"></a>
-                    <a class="btn btn-trans btn-icon fa fa-camera add-tooltip" href="#"></a>
-                    <a class="btn btn-trans btn-icon fa fa-file add-tooltip" href="#"></a>
-                  </div>
-                </div>
-              </div> -->
-
-            </div>
-          </div>
-
-          <div class="media-block">
-            <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar3.png">
-            </a>
-            <div class="media-body">
-              <p>Duis autem vel eum iriure dolor in hendrerit in vulputate ?</p>
-              <div class="pad-ver">
-                <div class="btn-group">
-                  <a class="btn btn-sm btn-default btn-hover-success" href="#"><i class="fa fa-thumbs-up"></i></a>
-                  <a class="btn btn-sm btn-default btn-hover-danger" href="#"><i class="fa fa-thumbs-down"></i></a>
-                  <a class="btn btn-sm btn-default btn-hover-danger" href="#"><i class="fa fa-heart"></i></a>
-                </div>
-                <a class="btn btn-sm btn-default btn-hover-primary" href="#">Comment</a>
-              </div>
-
-              <!-- area for adding comment to the comment-->
-
-              <!-- <div class="panel">
-                <div class="panel-body">
-                  <textarea class="form-control" rows="2" placeholder="What are you thinking?"></textarea>
-                  <div class="mar-top clearfix">
-                    <button class="btn btn-sm btn-primary pull-right" type="submit"><i class="fa fa-pencil fa-fw"></i> Post</button>
-                    <a class="btn btn-trans btn-icon fa fa-video-camera add-tooltip" href="#"></a>
-                    <a class="btn btn-trans btn-icon fa fa-camera add-tooltip" href="#"></a>
-                    <a class="btn btn-trans btn-icon fa fa-file add-tooltip" href="#"></a>
-                  </div>
-                </div>
-              </div> -->
-              
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--===================================================-->
-    <!-- End Newsfeed Content -->
-
-
-    <!-- Newsfeed Content -->
-    <!--===================================================-->
-    <div class="media-block pad-all">
-      <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar1.png"></a>
-      <div class="media-body">
-        <p>Lorem ipsum dolor sit amet.</p>
-        <img class="img-responsive thumbnail" src="https://via.placeholder.com/400x300" alt="Image">
-        <div class="pad-ver">
-          <span class="tag tag-sm"><i class="fa fa-heart text-danger"></i> 250 Likes</span>
-          <div class="btn-group">
-            <a class="btn btn-sm btn-default btn-hover-success" href="#"><i class="fa fa-thumbs-up"></i></a>
-            <a class="btn btn-sm btn-default btn-hover-danger" href="#"><i class="fa fa-thumbs-down"></i></a>
-            <a class="btn btn-sm btn-default btn-hover-danger" href="#"><i class="fa fa-heart"></i></a>
-          </div>
-          <!-- <a class="btn btn-sm btn-default btn-hover-primary" href="#">Comment</a> -->
-        </div>
-
-        <div class="panel">
-            <div class="panel-body">
-              <textarea class="form-control" rows="2" placeholder="What are you thinking?"></textarea>
-              <div class="mar-top clearfix">
-                <button class="btn btn-sm btn-primary pull-right" type="submit"><i class="fa fa-pencil fa-fw"></i> Post</button>
-                <a class="btn btn-trans btn-icon fa fa-video-camera add-tooltip" href="#"></a>
-                <a class="btn btn-trans btn-icon fa fa-camera add-tooltip" href="#"></a>
-                <a class="btn btn-trans btn-icon fa fa-file add-tooltip" href="#"></a>
-              </div>
-            </div>
-          </div>
-        
-
-        <!-- Comments -->
-        <div>
-          <div class="media-block pad-all">
-            <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar2.png"></a>
-            <div class="media-body">
-              <p>Duis autem vel eum iriure dolor in hendrerit in vulputate ?</p>
-              <div>
-                <div class="btn-group">
-                  <a class="btn btn-sm btn-default btn-hover-success" href="#"><i class="fa fa-thumbs-up"></i></a>
-                  <a class="btn btn-sm btn-default btn-hover-danger" href="#"><i class="fa fa-thumbs-down"></i></a>
-                  <a class="btn btn-sm btn-default btn-hover-danger" href="#"><i class="fa fa-heart"></i></a>
-                </div>
-                <a class="btn btn-sm btn-default btn-hover-primary" href="#">Comment</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--===================================================-->
-    <!-- End Newsfeed Content -->
-  </div>
-</div>
-</div>
-</div>
-    </section>
-    <!-- Testimonials-->
-    <section class="testimonials text-center bg-light">
-        <div class="container">
-            <h2 class="mb-5">Founders of the community</h2>
-            <div class="rowF">
-                <div class="col-lg-4F">
-                    <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                        <img class="img-fluid rounded-circle mb-3" src="./client/assets/images/elliot.png" alt="..." />
-                        <h5>Elliot H.</h5>
-                        <!-- <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p> -->
-                    </div>
-                </div>
-                <div class="col-lg-4F">
-                    <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                        <img class="img-fluid rounded-circle mb-3" src="./client/assets/images/florencia.png" alt="..." />
-                        <h5>Florencia P.</h5>
-                        <!-- <p class="font-weight-light mb-0">"Bootstrap is amazing. I've been using it to create lots of super nice landing pages."</p> -->
-                    </div>
-                </div>
-                <div class="col-lg-4F">
-                    <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                        <img class="img-fluid rounded-circle mb-3" src="./client/assets/images/vincent.jpg" alt="..." />
-                        <h5>Vincent O.</h5>
-                        <!-- <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to us!"</p> -->
-                    </div>
-                </div>
-
-                <div class="col-lg-4F">
-                    <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                        <img class="img-fluid rounded-circle mb-3" src="./client/assets/images/daiana.jpg" alt="..." />
-                        <h5>Daiana D.</h5>
-                        <!-- <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to us!"</p> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Call to Action-->
-    <section class="call-to-action text-white text-center" id="signup">
-        <div class="container position-relative">
-            <div class="row justify-content-center">
-                <div class="col-xl-6">
-                    <h2 class="mb-4">Want to join the community? Sign up now!</h2>
-                    <!-- Signup form-->
-                    <!-- * * * * * * * * * * * * * * *-->
-                    <!-- * * SB Forms Contact Form * *-->
-                    <!-- * * * * * * * * * * * * * * *-->
-                    <!-- This form is pre-integrated with SB Forms.-->
-                    <!-- To make this form functional, sign up at-->
-                    <!-- https://startbootstrap.com/solution/contact-forms-->
-                    <!-- to get an API token!-->
-                    <form class="form-subscribe" id="contactFormFooter" data-sb-form-api-token="API_TOKEN">
-                        <!-- Email address input-->
-                        <div class="row">
-                            <div class="col">
-                                <input class="form-control form-control-lg" id="emailAddressBelow" type="email"
-                                    placeholder="Email Address" data-sb-validations="required,email" />
-                                <div class="invalid-feedback text-white" data-sb-feedback="emailAddressBelow:required">
-                                    Email Address is required.</div>
-                                <div class="invalid-feedback text-white" data-sb-feedback="emailAddressBelow:email">
-                                    Email Address Email is not valid.</div>
-                            </div>
-                            <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton"
-                                    type="submit">Submit</button></div>
+                        <div class="postHeaderDescription">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                         </div>
-                        <!-- Submit success message-->
-                        <!---->
-                        <!-- This is what your users will see when the form-->
-                        <!-- has successfully submitted-->
-                        <div class="d-none" id="submitSuccessMessage">
-                            <div class="text-center mb-3">
-                                <div class="fw-bolder">Form submission successful!</div>
-                                <p>To activate this form, sign up at</p>
-                                <a class="text-white"
-                                    href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                            </div>
-                        </div>
-                        <!-- Submit error message-->
-                        <!---->
-                        <!-- This is what your users will see when there is-->
-                        <!-- an error submitting the form-->
-                        <div class="d-none" id="submitErrorMessage">
-                            <div class="text-center text-danger mb-3">Error sending message!</div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Footer-->
-    <footer class="footer bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
-                    <ul class="list-inline mb-2">
-                        <li class="list-inline-item"><a href="#!">About</a></li>
-                        <li class="list-inline-item">⋅</li>
-                        <li class="list-inline-item"><a href="#!">Contact</a></li>
-                        <li class="list-inline-item">⋅</li>
-                        <li class="list-inline-item"><a href="#!">Terms of Use</a></li>
-                        <li class="list-inline-item">⋅</li>
-                        <li class="list-inline-item"><a href="#!">Privacy Policy</a></li>
+                    </div>
+
+                    <img src="./images/attachement-example.jpeg" alt="gift" />
+
+                    <div class="postFooter">
+                        <span class="material-icons"> favorite </span>
+                        <span class="material-icons"> thumb_up </span>
+                        <span class="material-icons"> thumb_down </span>
+                        <span class="material-icons"> report </span>
+                    </div>
+                </div> -->
+                <section class="parentsection">
+                <section>
+                  <p>first post</p>
+                  <img src="./images/attachement-example.jpeg" alt="gif">
+                  <section>
+                    <textarea class="postText" placeholder="Share your thoughts" id="postText"></textarea>
+                    <button id="submitComment">Submit</button>
+                  </section>
+                  <section id="commentcontainer">
+                    <ul id="comments">
+                      <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate, dolorem. Magnam rem minima distinctio, magni quae voluptatibus. Labore, expedita nam ullam debitis, perspiciatis, officia iste nostrum corrupti reprehenderit culpa ut?</li>
+                      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, dolorem porro incidunt maxime hic aliquid odit voluptatum rerum doloribus exercitationem mollitia nulla, corrupti harum pariatur. Praesentium nesciunt aut nam consectetur.</li>
+                      <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur, id! Harum veniam optio adipisci accusamus repellendus itaque doloremque sit deleniti ipsam hic iure magnam sunt sequi dolores, voluptate officiis nulla.</li>
                     </ul>
-                    <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2022. All Rights Reserved.</p>
-                </div>
-                <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
-                    <ul class="list-inline mb-0">
-                        <li class="list-inline-item me-4">
-                            <a href="#!"><i class="bi-facebook fs-3"></i></a>
-                        </li>
-                        <li class="list-inline-item me-4">
-                            <a href="#!"><i class="bi-twitter fs-3"></i></a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#!"><i class="bi-instagram fs-3"></i></a>
-                        </li>
-                    </ul>
-                </div>
+                  </section>
+
+                </section>
+                </section>
+
             </div>
-        </div>
-    </footer>
-    <!-- Bootstrap core JS-->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> -->
-    <!-- Core theme JS-->
-    <!-- <script src="js/scripts.js"></script> -->
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-    <!-- * *                               SB Forms JS                               * *-->
-    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-    <!-- <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script> -->
 
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script>
+            <!-- posts list ends -->
 
-       let timer;
+         </div>
+
+         <!-- section main ends -->
+
+
+         <!-- section special posts starts -->
+         <div class="specialPosts">
+            <div class="specialPostInput">
+                <span class="material-icons specialPostsSeacrchIcon"> search </span>
+                <input type="text" placeholder="Search posts" />
+            </div>
+
+            <div class="specialPostContainer">
+                <h2>Most popular</h2>
+
+            </div>
+
+            <div class="specialPostContainer">
+                <h2>Not to miss</h2>
+
+            </div>
+
+
+         </div>
+
+         <!-- section special posts ends -->
+
+
+
+         <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+         <script>
+
+            let timer;
 $('#postText').on('input propertychange', counterLiveUpdate);
 function counterLiveUpdate() {
-$('#charCount').text(255 - $('#postText').val().length + " word(s) count");
+    $('#charCount').text(255 - $('#postText').val().length + " word(s) count");
 }
 
 // Initial Search Buttons
 var topics = ["Internet Cats", "Meme's", "Typing", "Space", "Rick and Morty"];
 function addSearchBtns() {
-$("#buttons").html("");
-for (i = 0; i < topics.length; i++) {
-var $button = $("<input type='button' class='btn btn-sm search-btn' />");
-$button.val(topics[i]);
-$("#buttons").append($button);
-}
+  $("#buttons").html("");
+  for (i = 0; i < topics.length; i++) {
+    var $button = $("<input type='button' class='btn btn-sm search-btn' />");
+    $button.val(topics[i]);
+    $("#buttons").append($button);
+  }
 }
 addSearchBtns();
 
 $(document).on("click", ".btn", function() {
-$("#results").html("");
-// Beginning API call
-var queryURL = "https://api.giphy.com/v1/gifs/search?";
-var query;
-var params = {
-q: query,
-limit: 10,
-api_key: "aFFKTuSMjd6j0wwjpFCPXZipQbcnw3vB",
-fmt: "json"
-};
-if ($(this).hasClass("search-btn")) {
-query = $(this).val();
-} else if ($("#user-search").val() !== "") {
-query = $("#user-search").val();
-topics.push(query);
-if (topics.length > 6) {
- topics.shift();
-}
-addSearchBtns();
-}
-params.q = query;
+  $("#results").html("");
+  // Beginning API call
+  var queryURL = "https://api.giphy.com/v1/gifs/search?";
+  var query;
+  var params = {
+    q: query,
+    limit: 10,
+    api_key: "aFFKTuSMjd6j0wwjpFCPXZipQbcnw3vB",
+    fmt: "json"
+  };
+  if ($(this).hasClass("search-btn")) {
+    query = $(this).val();
+  } else if ($("#user-search").val() !== "") {
+    query = $("#user-search").val();
+    topics.push(query);
+    if (topics.length > 6) {
+      topics.shift();
+    }
+    addSearchBtns();
+  }
+  params.q = query;
 
-if ($(this).hasClass("trending")) {
-queryURL = "https://api.giphy.com/v1/gifs/trending?";
-delete params.q;
-}
-$.ajax({
-url: queryURL + $.param(params),
-method: "GET",
-success: function(r) {
- for (i = 0; i < params.limit; i++) {
-   var $img = $("<img>");
-   var $div = $("<div>");
-   var $rating = $("<h6>");
-   var gifObj = r.data[i];
-   var gif = gifObj.images;
+  if ($(this).hasClass("trending")) {
+    queryURL = "https://api.giphy.com/v1/gifs/trending?";
+    delete params.q;
+  }
+  $.ajax({
+    url: queryURL + $.param(params),
+    method: "GET",
+    success: function(r) {
+      for (i = 0; i < params.limit; i++) {
+        var $img = $("<img>");
+        var $div = $("<div>");
+        var $rating = $("<h6>");
+        var gifObj = r.data[i];
+        var gif = gifObj.images;
 
-   // Image builder object
-   $img.attr({
-     // "width": "200px",
-     src: gif.fixed_height_still.url,
-     "data-animate": gif.fixed_height.url,
-     "data-still": gif.fixed_height_still.url,
-     "data-state": "still",
-     class: "gif"
-   });
-   // $div.attr("id", "gif-" + i);
-   $div.addClass("gif-box");
-   $rating.text("Rating: " + gifObj.rating);
-   $div.append($img, $rating);
-   $("#results").append($div);
- }
+        // Image builder object
+        $img.attr({
+          // "width": "200px",
+          src: gif.fixed_height_still.url,
+          "data-animate": gif.fixed_height.url,
+          "data-still": gif.fixed_height_still.url,
+          "data-state": "still",
+          class: "gif"
+        });
+        // $div.attr("id", "gif-" + i);
+        $div.addClass("gif-box");
+        $rating.text("Rating: " + gifObj.rating);
+        $div.append($img, $rating);
+        $("#results").append($div);
+      }
 
- $(".gif").on("mouseover", function() {
-   var state = $(this).attr("data-state");
-   if (state === "still") {
-     $(this).attr("src", $(this).attr("data-animate"));
-     $(this).attr("data-state", "animate");
-   } else {
-     $(this).attr("src", $(this).attr("data-still"));
-     $(this).attr("data-state", "still");
-   }
- });
+      $(".gif").on("mouseover", function() {
+        var state = $(this).attr("data-state");
+        if (state === "still") {
+          $(this).attr("src", $(this).attr("data-animate"));
+          $(this).attr("data-state", "animate");
+        } else {
+          $(this).attr("src", $(this).attr("data-still"));
+          $(this).attr("data-state", "still");
+        }
+      });
 
 
- $(".gif").on("click", function() {
-   $(".giphyAppend").append
-   resultingurl = $(this).attr("src")
-   console.log(resultingurl);
+      $(".gif").on("click", function() {
+        $(".giphyAppend").append
+        resultingurl = $(this).attr("src")
+        console.log(resultingurl);
 
-   $(".giphyAppend").text(resultingurl);
+        $(".giphyAppend").text(resultingurl);
 
-   // trigger another function that uses resultingurl e.g myFunction(resultingurl); ???
+        // trigger another function that uses resultingurl e.g myFunction(resultingurl); ???
+    });
+    }
+  });
 });
-}
-});
-});
 
-    </script>
-
-  </body>
-
+         </script>
+</body>
 </html>
