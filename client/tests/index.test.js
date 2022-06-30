@@ -1,9 +1,9 @@
 //for fetch calls
 global.fetch = require('jest-fetch-mock');
 
-const functions = require('/Users/vincent/Desktop/Futureproof/Week4/projectWeek/blogFrontendfinal/Blog_Frontend_PW/client/js/app.js');
+const functions = require('../js/app.js');
 
-jest.mock('/Users/vincent/Desktop/Futureproof/Week4/projectWeek/blogFrontendfinal/Blog_Frontend_PW/client/js/app.js');
+jest.mock('../js/app.js');
 
 beforeEach(() => { fetch.resetMocks() })
 
@@ -14,8 +14,8 @@ describe('testing forEach in appendResults', () => {
         functions.appendResults = jest.fn()
         // const testArray = ['this', 'that', 'the other'];
         // functions.appendResults(testArray);
-        expect(functions.appendResults([1,2,3,4,5])).toHaveBeenCalledTimes(3);
-        })    
+        expect(functions.appendResults([1,2,3,4,5])).toHaveBeenCalledTimes(5);
+        })
     })
 
 
@@ -26,6 +26,3 @@ describe('testing fetch requests', () => {
         expect(fetch).toHaveBeenCalled()
     })
 })
-
-
-
