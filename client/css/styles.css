@@ -11689,7 +11689,7 @@ fieldset:disabled .btn {
 header.masthead {
   position: relative;
   background-color: #343a40;
-  background: url("../assets/img/background.jpeg") no-repeat center center;
+  background: url("./assets/images/background.jpeg") no-repeat center center;
   background-size: cover;
   padding-top: 8rem;
   padding-bottom: 8rem;
