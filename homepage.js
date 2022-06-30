@@ -167,7 +167,7 @@ container.setAttribute('id', itemData.id)
 //updating dating classes to merge with Daiana's styling
 container.setAttribute('class','postBody');
 content.setAttribute('class','postHeaderText');
-textAreaSection.setAttribute('class','addComment');
+textAreaSection.setAttribute('class','pannel');
 commentContainer.setAttribute('class','commentList');
 ul.setAttribute('class','commentsListDisplay');
 
