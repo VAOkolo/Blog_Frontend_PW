@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Landing Page - Start Bootstrap Theme</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="./client/assests/favicon.png" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet"
+        type="text/css" />
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="./client/css/styles.css" rel="stylesheet" />
+    <script defer src="homepage.js"></script>
+</head>
+
+<body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-light bg-light static-top">
+        <div class="container">
+            <a class="navbar-brand" href="#!">MUZE</a>
+            <a class="btn btn-primary" href="#signup">Sign Up</a>
+        </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container position-relative">
+            <div class="row justify-content-center">
+                <div class="col-xl-6">
+                    <div class="text-center text-white">
+                        <!-- Page heading-->
+                        <h1 class="mb-5">Share your thoughs!</h1>
+                        <!-- Add new post form-->
+                        <!-- to get an API token!-->
+                        <form class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN">
+                            <!-- Post input-->
+                            <div class="row">
+                                <div class="col">
+                                    <input class="form-control form-control-lg" id="postInput" type="email"
+                                        placeholder="Your message" data-sb-validations="required,email" />
+                                    <div class="invalid-feedback text-white" data-sb-feedback="postInput:required">
+                                        Please ensure the post has text.</div>
+                                </div>
+                                <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton"
+                                        type="submit">Post</button></div>
+                            </div>
+                            <!-- Submit success message-->
+                            <!---->
+                            <!-- This is what your users will see when the post-->
+                            <!-- has successfully submitted-->
+                            <div class="d-none" id="submitSuccessMessage">
+                                <div class="text-center mb-3">
+                                    <div class="fw-bolder">Post successfully submited!</div>
+                                </div>
+                            </div>
+                            <!-- Submit error message-->
+                            <!---->
+                            <!-- This is what your users will see when there is-->
+                            <!-- an error submitting the post-->
+                            <div class="d-none" id="submitErrorMessage">
+                                <div class="text-center text-danger mb-3">Error sending post!</div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Icons Grid-->
+    <section class="features-icons bg-light text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                        <!-- <div class="features-icons-icon d-flex"><i class="bi-window m-auto text-primary"></i></div> -->
+                        <div class="features-icons-icon d-flex"><i class="material-icons m-auto text-primary">feed</i>
+                        </div>
+                        <h3>News</h3>
+                        <p class="lead mb-0">Things that you need to know!</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                        <!-- <div class="features-icons-icon d-flex"><i class="bi-layers m-auto text-primary"></i></div> -->
+                        <div class="features-icons-icon d-flex"><i class="material-icons m-auto text-primary">event</i>
+                        </div>
+                        <h3>Events</h3>
+                        <p class="lead mb-0">Discover new talent, and catch up with the community!</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+                        <!-- <div class="features-icons-icon d-flex"><i class="bi-terminal m-auto text-primary"></i></div> -->
+                        <div class="features-icons-icon d-flex"><i
+                                class="material-icons m-auto text-primary">auto_awesome</i></div>
+                        <h3>Awards</h3>
+                        <p class="lead mb-0">Do not miss out on the best performances!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Image Showcases-->
+    <section class="showcase"> 
+
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container bootdey">
+<div class="col-md-12 bootstrap snippets">
+<div class="panel">
+  <div class="panel-body">
+    <textarea class="form-control" rows="2" placeholder="What are you thinking?"></textarea>
+    <div class="mar-top clearfix">
+      <button class="btn btn-sm btn-primary pull-right" type="submit"><i class="fa fa-pencil fa-fw"></i> Post</button>
+      <a class="btn btn-trans btn-icon fa fa-video-camera add-tooltip" href="#"></a>
+      <a class="btn btn-trans btn-icon fa fa-camera add-tooltip" href="#"></a>
+      <a class="btn btn-trans btn-icon fa fa-file add-tooltip" href="#"></a>
+    </div>
+  </div>
+</div>
+<div class="panel">
+    <div class="panel-body">
+    <!-- Newsfeed Content -->
+    <!--===================================================-->
+    <div class="media-block pad-all">
+        <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar1.png"></a>
+        <div class="media-body">
+          <!-- <div class="mar-btm">
+            <a href="#" class="btn-link text-semibold media-heading box-inline">Last night outstanding performance</a>
+            <p class="text-muted text-sm"><i class="fa fa-mobile fa-lg"></i> - From Mobile - 11 min ago</p>
+          </div> -->
+          <p>Lorem ipsum dolor sit amet.</p>
+          <img class="img-responsive thumbnail" src="https://via.placeholder.com/400x300" alt="Image">
+          <div class="pad-ver">
+            <span class="tag tag-sm"><i class="fa fa-heart text-danger"></i> 1450 Likes</span>
+            <div class="btn-group">
+              <a class="btn btn-sm btn-default btn-hover-success" href="#"><i class="fa fa-thumbs-up"></i></a>
+              <a class="btn btn-sm btn-default btn-hover-danger" href="#"><i class="fa fa-thumbs-down"></i></a>
+              <a class="btn btn-sm btn-default btn-hover-danger" href="#"><i class="fa fa-heart"></i></a>
+            </div>
+            <!-- <a class="btn btn-sm btn-default btn-hover-primary" href="#">Comment</a> -->
+          </div>
+
+          <div class="panel">
+            <div class="panel-body">
+              <textarea class="form-control" rows="2" placeholder="What are you thinking?"></textarea>
+              <div class="mar-top clearfix">
+                <button class="btn btn-sm btn-primary pull-right" type="submit"><i class="fa fa-pencil fa-fw"></i> Post</button>
+                <a class="btn btn-trans btn-icon fa fa-video-camera add-tooltip" href="#"></a>
+                <a class="btn btn-trans btn-icon fa fa-camera add-tooltip" href="#"></a>
+                <a class="btn btn-trans btn-icon fa fa-file add-tooltip" href="#"></a>
+              </div>
+            </div>
+          </div>
+          
+
+        <!-- Comments -->
+        <div>
+          <div class="media-block">
+            <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar2.png"></a>
+            <div class="media-body">
+              <!-- <div class="mar-btm">
+                <a href="#" class="btn-link text-semibold media-heading box-inline">Could it be talent and hard work?</a>
+                <p class="text-muted text-sm"><i class="fa fa-mobile fa-lg"></i> - From Mobile - 7 min ago</p>
+              </div> -->
+              <p>Sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+              <div class="pad-ver">
+                <div class="btn-group">
+                  <a class="btn btn-sm btn-default btn-hover-success active" href="#"><i class="fa fa-thumbs-up"></i> You Like it</a>
+                  <a class="btn btn-sm btn-default btn-hover-danger" href="#"><i class="fa fa-thumbs-down"></i></a>
+                  <a class="btn btn-sm btn-default btn-hover-danger" href="#"><i class="fa fa-heart"></i></a>
+                </div>
+                <a class="btn btn-sm btn-default btn-hover-primary" href="#">Comment</a>
+              </div>
+              
+              <!-- <div class="panel">
+                <div class="panel-body">
+                  <textarea class="form-control" rows="2" placeholder="What are you thinking?"></textarea>
+                  <div class="mar-top clearfix">
+                    <button class="btn btn-sm btn-primary pull-right" type="submit"><i class="fa fa-pencil fa-fw"></i> Post</button>
+                    <a class="btn btn-trans btn-icon fa fa-video-camera add-tooltip" href="#"></a>
+                    <a class="btn btn-trans btn-icon fa fa-camera add-tooltip" href="#"></a>
+                    <a class="btn btn-trans btn-icon fa fa-file add-tooltip" href="#"></a>
+                  </div>
+                </div>
+              </div> -->
+
+            </div>
+          </div>
+
+          <div class="media-block">
+            <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar3.png">
+            </a>
+            <div class="media-body">
+              <p>Duis autem vel eum iriure dolor in hendrerit in vulputate ?</p>
+              <div class="pad-ver">
+                <div class="btn-group">
+                  <a class="btn btn-sm btn-default btn-hover-success" href="#"><i class="fa fa-thumbs-up"></i></a>
+                  <a class="btn btn-sm btn-default btn-hover-danger" href="#"><i class="fa fa-thumbs-down"></i></a>
+                  <a class="btn btn-sm btn-default btn-hover-danger" href="#"><i class="fa fa-heart"></i></a>
+                </div>
+                <a class="btn btn-sm btn-default btn-hover-primary" href="#">Comment</a>
+              </div>
+
+              <!-- area for adding comment to the comment-->
+
+              <!-- <div class="panel">
+                <div class="panel-body">
+                  <textarea class="form-control" rows="2" placeholder="What are you thinking?"></textarea>
+                  <div class="mar-top clearfix">
+                    <button class="btn btn-sm btn-primary pull-right" type="submit"><i class="fa fa-pencil fa-fw"></i> Post</button>
+                    <a class="btn btn-trans btn-icon fa fa-video-camera add-tooltip" href="#"></a>
+                    <a class="btn btn-trans btn-icon fa fa-camera add-tooltip" href="#"></a>
+                    <a class="btn btn-trans btn-icon fa fa-file add-tooltip" href="#"></a>
+                  </div>
+                </div>
+              </div> -->
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--===================================================-->
+    <!-- End Newsfeed Content -->
+
+
+    <!-- Newsfeed Content -->
+    <!--===================================================-->
+    <div class="media-block pad-all">
+      <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar1.png"></a>
+      <div class="media-body">
+        <p>Lorem ipsum dolor sit amet.</p>
+        <img class="img-responsive thumbnail" src="https://via.placeholder.com/400x300" alt="Image">
+        <div class="pad-ver">
+          <span class="tag tag-sm"><i class="fa fa-heart text-danger"></i> 250 Likes</span>
+          <div class="btn-group">
+            <a class="btn btn-sm btn-default btn-hover-success" href="#"><i class="fa fa-thumbs-up"></i></a>
+            <a class="btn btn-sm btn-default btn-hover-danger" href="#"><i class="fa fa-thumbs-down"></i></a>
+            <a class="btn btn-sm btn-default btn-hover-danger" href="#"><i class="fa fa-heart"></i></a>
+          </div>
+          <!-- <a class="btn btn-sm btn-default btn-hover-primary" href="#">Comment</a> -->
+        </div>
+
+        <div class="panel">
+            <div class="panel-body">
+              <textarea class="form-control" rows="2" placeholder="What are you thinking?"></textarea>
+              <div class="mar-top clearfix">
+                <button class="btn btn-sm btn-primary pull-right" type="submit"><i class="fa fa-pencil fa-fw"></i> Post</button>
+                <a class="btn btn-trans btn-icon fa fa-video-camera add-tooltip" href="#"></a>
+                <a class="btn btn-trans btn-icon fa fa-camera add-tooltip" href="#"></a>
+                <a class="btn btn-trans btn-icon fa fa-file add-tooltip" href="#"></a>
+              </div>
+            </div>
+          </div>
+        
+
+        <!-- Comments -->
+        <div>
+          <div class="media-block pad-all">
+            <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar2.png"></a>
+            <div class="media-body">
+              <p>Duis autem vel eum iriure dolor in hendrerit in vulputate ?</p>
+              <div>
+                <div class="btn-group">
+                  <a class="btn btn-sm btn-default btn-hover-success" href="#"><i class="fa fa-thumbs-up"></i></a>
+                  <a class="btn btn-sm btn-default btn-hover-danger" href="#"><i class="fa fa-thumbs-down"></i></a>
+                  <a class="btn btn-sm btn-default btn-hover-danger" href="#"><i class="fa fa-heart"></i></a>
+                </div>
+                <a class="btn btn-sm btn-default btn-hover-primary" href="#">Comment</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--===================================================-->
+    <!-- End Newsfeed Content -->
+  </div>
+</div>
+</div>
+</div>
+    </section>
+    <!-- Testimonials-->
+    <section class="testimonials text-center bg-light">
+        <div class="container">
+            <h2 class="mb-5">Founders of the community</h2>
+            <div class="rowF">
+                <div class="col-lg-4F">
+                    <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                        <img class="img-fluid rounded-circle mb-3" src="assets/img/elliot.png" alt="..." />
+                        <h5>Elliot H.</h5>
+                        <!-- <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p> -->
+                    </div>
+                </div>
+                <div class="col-lg-4F">
+                    <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                        <img class="img-fluid rounded-circle mb-3" src="assets/img/florencia.png" alt="..." />
+                        <h5>Florencia P.</h5>
+                        <!-- <p class="font-weight-light mb-0">"Bootstrap is amazing. I've been using it to create lots of super nice landing pages."</p> -->
+                    </div>
+                </div>
+                <div class="col-lg-4F">
+                    <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                        <img class="img-fluid rounded-circle mb-3" src="assets/img/vincent.jpg" alt="..." />
+                        <h5>Vincent O.</h5>
+                        <!-- <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to us!"</p> -->
+                    </div>
+                </div>
+
+                <div class="col-lg-4F">
+                    <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                        <img class="img-fluid rounded-circle mb-3" src="assets/img/daiana.jpg" alt="..." />
+                        <h5>Daiana D.</h5>
+                        <!-- <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to us!"</p> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Call to Action-->
+    <section class="call-to-action text-white text-center" id="signup">
+        <div class="container position-relative">
+            <div class="row justify-content-center">
+                <div class="col-xl-6">
+                    <h2 class="mb-4">Want to join the community? Sign up now!</h2>
+                    <!-- Signup form-->
+                    <!-- * * * * * * * * * * * * * * *-->
+                    <!-- * * SB Forms Contact Form * *-->
+                    <!-- * * * * * * * * * * * * * * *-->
+                    <!-- This form is pre-integrated with SB Forms.-->
+                    <!-- To make this form functional, sign up at-->
+                    <!-- https://startbootstrap.com/solution/contact-forms-->
+                    <!-- to get an API token!-->
+                    <form class="form-subscribe" id="contactFormFooter" data-sb-form-api-token="API_TOKEN">
+                        <!-- Email address input-->
+                        <div class="row">
+                            <div class="col">
+                                <input class="form-control form-control-lg" id="emailAddressBelow" type="email"
+                                    placeholder="Email Address" data-sb-validations="required,email" />
+                                <div class="invalid-feedback text-white" data-sb-feedback="emailAddressBelow:required">
+                                    Email Address is required.</div>
+                                <div class="invalid-feedback text-white" data-sb-feedback="emailAddressBelow:email">
+                                    Email Address Email is not valid.</div>
+                            </div>
+                            <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton"
+                                    type="submit">Submit</button></div>
+                        </div>
+                        <!-- Submit success message-->
+                        <!---->
+                        <!-- This is what your users will see when the form-->
+                        <!-- has successfully submitted-->
+                        <div class="d-none" id="submitSuccessMessage">
+                            <div class="text-center mb-3">
+                                <div class="fw-bolder">Form submission successful!</div>
+                                <p>To activate this form, sign up at</p>
+                                <a class="text-white"
+                                    href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                            </div>
+                        </div>
+                        <!-- Submit error message-->
+                        <!---->
+                        <!-- This is what your users will see when there is-->
+                        <!-- an error submitting the form-->
+                        <div class="d-none" id="submitErrorMessage">
+                            <div class="text-center text-danger mb-3">Error sending message!</div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer-->
+    <footer class="footer bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
+                    <ul class="list-inline mb-2">
+                        <li class="list-inline-item"><a href="#!">About</a></li>
+                        <li class="list-inline-item">⋅</li>
+                        <li class="list-inline-item"><a href="#!">Contact</a></li>
+                        <li class="list-inline-item">⋅</li>
+                        <li class="list-inline-item"><a href="#!">Terms of Use</a></li>
+                        <li class="list-inline-item">⋅</li>
+                        <li class="list-inline-item"><a href="#!">Privacy Policy</a></li>
+                    </ul>
+                    <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2022. All Rights Reserved.</p>
+                </div>
+                <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item me-4">
+                            <a href="#!"><i class="bi-facebook fs-3"></i></a>
+                        </li>
+                        <li class="list-inline-item me-4">
+                            <a href="#!"><i class="bi-twitter fs-3"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#!"><i class="bi-instagram fs-3"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> -->
+    <!-- Core theme JS-->
+    <!-- <script src="js/scripts.js"></script> -->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script> -->
+</body>
+
+</html>
