@@ -11,10 +11,10 @@ beforeEach(() => { fetch.resetMocks() })
 
 describe('testing forEach in appendResults', () => {
     test('accepts json', () => {
-        const fakeCallback = jest.fn(functions.appendResults([1,2,3,4,5])); // create a mock function
+        functions.appendResults = jest.fn()
         // const testArray = ['this', 'that', 'the other'];
         // functions.appendResults(testArray);
-        expect(fakeCallback).toHaveBeenCalledTimes(3);
+        expect(functions.appendResults([1,2,3,4,5])).toHaveBeenCalledTimes(3);
         })    
     })
 
