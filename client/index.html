@@ -11,7 +11,8 @@
     <script defer src="./js/index.js"></script>
 </head>
 <body>
-
+  <div id="preloader"></div>
+    
         <!-- section navigation start -->
         <div class="sidebar">
 
@@ -294,5 +295,12 @@ $(document).on("click", ".btn", function() {
 });
 
          </script>
+    
+          <script>
+          let loader = document.getElementById("preloader");
+          window.addEventListener("load", () => {
+          loader.style.display = "none";
+          });
+          </script>
 </body>
 </html>
