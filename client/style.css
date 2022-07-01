@@ -475,3 +475,14 @@ body{
     ul > li {
         list-style-type: none;
     }
+
+
+ #preloader {
+        background: white url('images/loading.gif') no-repeat center;
+        left: 0;
+        background-size: 20%;
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        z-index: 100;
+        }
