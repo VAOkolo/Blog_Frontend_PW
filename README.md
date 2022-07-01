@@ -44,7 +44,7 @@ Moving on,
 
 Next, during the duration of the working day several meetings were done at an interval of about 3h to 5h via Slack. 
 
-Then, taking the process in terms of milestiones there were ... significant ones - 
+Then, taking the process in terms of milestones there were many significant ones - 
 
 // image first design - wierframe
 // images refined design
@@ -64,11 +64,11 @@ Then, taking the process in terms of milestiones there were ... significant ones
 
 # Wins and challengs
 
-Completing the task has brought several accomiplishements namely:
+Completing the task has brought several accomplishments namely:
 
 
 
-Yet, there were sevral challenges such as:
+Yet, there were several challenges such as:
 
 
 
