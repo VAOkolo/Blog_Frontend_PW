@@ -1,5 +1,5 @@
-const path = 'http://localhost:5000';
-// const path = 'https://museapp-backend.herokuapp.com'
+// const path = 'http://localhost:5000';
+const path = 'https://museapp-backend.herokuapp.com'
 //fetch data from database
 async function fetchData() {
    try{ 
