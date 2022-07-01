@@ -5,12 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
+    <link rel="icon" type="image/x-icon" href="/Blog_Frontend_PW/client/images/favicon.png">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link href="style.css" rel="stylesheet"/>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <script src="./js/app.js"></script>
     <script defer src="./js/index.js"></script>
 </head>
-<body>
+<body class="container mx-auto">
+    <div id="preloader"></div>
 
         <!-- section navigation start -->
         <div class="sidebar">
@@ -60,7 +64,7 @@
 
          <div class="mainSection">
             <div class="mainSectionHeader">
-                <h2>Home</h2>
+                <h2>MUZE</h2>
             </div>
 
             <!-- post box starts -->
@@ -71,7 +75,7 @@
                 <form>
                     <div class="postInput">
                         <img src="./images/avatar-icon.jpg" alt="avatar-icon">
-                        <input class="postTitle" type="text" placeholder="Title"/>
+                        <!-- <input class="postTitle" type="text" placeholder="Title"/> -->
                         <!-- <textare style="border: 1px solid black; width: 80px;" class="postText" placeholder="Share your thoughts"></textare> -->
                         <!-- <input class="postContent" type="text" placeholder="Share your thoughts"/> -->
                     </div>
@@ -82,7 +86,7 @@
                     <span class="createPostFooter">
                         <textarea class="postText" placeholder="Share your thoughts" id="postText"></textarea>
                         <span class="charCount" id="charCount">255</span>
-                        <button class="postButton" id="submitButton">Post</button>
+                        <button class="postButton btn btn-primary" id="submitButton">Post</button>
                         <p class="giphyAppend"></p>
                     </span>
                     <div class="giphyContainer">
@@ -142,20 +146,6 @@
                     </div>
                 </div> -->
                 <section class="parentsection">
-                <section>
-                  <p>first post</p>
-                  <img src="./images/attachement-example.jpeg" alt="gif">
-                  <section>
-                    <textarea class="postText" placeholder="Share your thoughts" id="postText"></textarea>
-                    <button id="submitComment">Submit</button>
-                  </section>
-                  <section id="commentcontainer">
-                    <ul id="comments">
-                      <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate, dolorem. Magnam rem minima distinctio, magni quae voluptatibus. Labore, expedita nam ullam debitis, perspiciatis, officia iste nostrum corrupti reprehenderit culpa ut?</li>
-                      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, dolorem porro incidunt maxime hic aliquid odit voluptatum rerum doloribus exercitationem mollitia nulla, corrupti harum pariatur. Praesentium nesciunt aut nam consectetur.</li>
-                      <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur, id! Harum veniam optio adipisci accusamus repellendus itaque doloremque sit deleniti ipsam hic iure magnam sunt sequi dolores, voluptate officiis nulla.</li>
-                    </ul>
-                  </section>
 
                 </section>
                 </section>
@@ -190,8 +180,6 @@
          </div>
 
          <!-- section special posts ends -->
-
-
 
          <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
          <script>
@@ -294,5 +282,14 @@ $(document).on("click", ".btn", function() {
 });
 
          </script>
+         <script>
+
+            let loader = document.getElementById("preloader");
+            
+            window.addEventListener("load", () => {
+            loader.style.display = "none";
+            });
+            
+            </script>
 </body>
 </html>

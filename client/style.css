@@ -6,16 +6,30 @@
     box-sizing: border-box;
 }
 
-body{
-    padding-left: 10vw;
-    padding-right: 10vw;
-   --navigation-color: #50b7f5;
-   --navigation-background : #e6ecf0;
-}
+    body{
+        /* padding-left: 10vw;
+        padding-right: 10vw; */
+       --navigation-color: #50B7F5;
+       --navigation-background : #E6ECF0;
+       margin: auto;
+       display: flex;
+       justify-content: center;
+       height: 100vh;
+       /* max-width: 1300px; */
+    }
+
+    form{
+        border-radius: 5px;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+        max-width: 700px;
+        margin-top: 10px;
+        margin-left: 10px;
+        /* margin: auto; */
+    }
+
 
 .sidebar {
     padding-top: 30px;
-    padding-left: 30px;
     padding-right: 30px;
 }
 
@@ -28,16 +42,6 @@ body{
 .sidebarOption .material-icons {
     padding: 15px;
 }
-
-/* doesn't work */
-/* .material-icons {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48
-} */
-
 
 .sidebarOption h2{
     font-weight: 800;
@@ -67,51 +71,13 @@ body{
     margin-top: 20px;
 }
 
-body{
-    display: flex;
-    height: 100vh;
-    max-width: 1300px;
-    /* margin-left: auto;
-    margin-right: auto;
-    padding: 0 10px; */
-}
 
 .sidebar{
     border-right: 1px solid var(--navigation-background);
     flex: 0.2;
+    padding-right: auto;
 }
 
-/* postPopup */
-/* .postPopUp {
-    position: absolute;
-    min-width: 100%;
-    min-height: 100vh;
-    background-color:rgba(0, 0, 0, 0.7);
-    top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 200;
-}
-
-.postPopUpContent{
-    display: flex;
-    width: 500px;
-    height: 300px;
-    background-color: white;
-    border-radius: 20px;
-}
-
-.closePopUp{
-    background-color: white;
-    border: none;
-    color: gray;
-    height: 50px;
-    width: 50px;
-    font-size: 14px;
-    margin-left: 32%;
-    margin-top: 5px;
-} */
 
 .searchGif {
     display: flex;
@@ -149,8 +115,62 @@ body{
     border-right: 1px solid var(--navigation-background);
     min-width: fit-content;
     overflow-y: scroll;
+    margin-left: auto;
 }
 
+/* @media (min-width: 1200px) {
+    .mainSection,  h1, p, .sidebar, .specialPostContainer{
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1200px) {
+     .body{
+      margin-left: 10px;
+    }
+  } 
+  
+@media (min-width: 576px) {
+    .sidebar,
+    .post, 
+    .body {
+      max-width: 540px;
+    }
+  }
+  @media (min-width: 768px) {
+    .sidebar
+    .container,
+    .specialPostContainer,
+    .body {
+      max-width: 720px;
+    }
+  }
+  @media (min-width: 992px) {
+    .sidebar,
+    .post,
+    .mainSection,
+    .specialPostContainer,
+    .body {
+      max-width: 960px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .sidebar,
+    .post,
+    .specialPostContainer,
+    .body {
+      max-width: 1140px;
+    }
+  }
+  @media (min-width: 1400px) {
+    .sidebar,
+    .post, 
+    .specialPostContainer,
+    .body {
+      max-width: 1320px;
+    }
+  } */
 .mainSectionHeader {
     position: sticky;
     top: 0;
@@ -161,7 +181,7 @@ body{
 }
 
 .mainSectionHeader h2{
-    font-size: 20px;
+    font-size: 40px;
     font-weight: 800;
 }
 
@@ -177,7 +197,8 @@ body{
 /* postContainer */
 .postInput img{
     border-radius: 50%;
-    height: 40px;
+    height: 60px;
+    width: 70px;
 }
 
 .postContainer{
@@ -206,27 +227,23 @@ body{
     outline: none;
 }
 
-.postInput input {
-    font-size: 20px;
-    color: gray;
-}
-
 .postText {
     display: flex;
-    margin-left: 60px;
-    margin-right: 60px;
+    /* margin-right: 0px; */
+    margin-bottom: 20px;
     font-size: 18px;
     font-family: Arial, Helvetica, sans-serif;
     color: gray;
-    min-width: 640px;
-    max-width: 640px;
+    /* min-width: 200px; */
+    width: 550px;
     min-height: 140px;
     max-height: 140px;
     height: 100px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 10px;
+    /* padding-right: 20px; */
     padding-top: 10px;
-    border: none;
+    border: '2px black';
+    border-radius: 20px;
     outline: none;
 }
 
@@ -248,11 +265,11 @@ body{
     border-radius: 30px;
     width: 90px;
     height: 35px;
+    margin-left: 400px;
 }
 
 .addGifButton{
     background-color: white;
-    /* border: 1px solid gray; */
     border: none;
     color: gray;
     height: 30px;
@@ -280,27 +297,35 @@ body{
 /* changed from post to parentsection */
 .parentsection {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
-    /* align-items: left; */
     border-bottom: 1px solid var(--navigation-background);
     padding-bottom: 10px;
-    margin-left: 65px;
+    /* margin-left: px; */
+    /* margin: 0 auto; */
 }
 
 .postHeaderText {
     display: block;
     align-items: flex-start;
     margin-bottom: 10px;
+    margin-left: 20px;
     font-size: 16px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: gray;
+    margin-top: 10px;
 }
 
 .postBody img {
-    width: 610px;
+    width: 480px;
     object-fit: contain;
     border-radius: 20px;
+    margin: 0;
+    position: relative;
+    left: 65px;
+    /* margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 10px; */
 }
 
 /* changed from postFooter */
@@ -369,28 +394,21 @@ body{
 .commentsListDisplay{
     font-size: 18px;
     list-style-type: none;
+
 }
 
 .elementCommentsList {
     margin-top: 10px;
-    border: 1px solid lightgray;
-    border-radius: 10px;
+    /* border: 1px solid lightgray;
+    border-radius: 10px; */
     height: fit-content;
+    font-size: 16px;
     padding-top: 5px;
+    margin-left: 20px;
     padding-left: 20px;
     color: gray;
+    margin-bottom: 10px;
 }
-
-/* .postHeaderBadge {
-    font-weight: 600;
-    font-size: 12px;
-    color: gray;
-} */
-
-/* .postHeaderText h3{
-    font-size: 18px;
-    margin-bottom: 5px;
-} */
 
 
 .postMainText {
@@ -422,7 +440,7 @@ body{
     background-color: var(--navigation-background);
     padding: 10px;
     border-radius: 20px;
-    margin-top: 10px;
+    margin-top: 30px;
     margin-left: 20px;
 }
 
@@ -469,9 +487,19 @@ body{
         justify-content: center;
         text-align: center;
         flex-direction: column;
+        margin-bottom: 20px;
     }
 
 
     ul > li {
         list-style-type: none;
     }
+
+    #preloader {
+        background: white url('images/loading.gif') no repeat center;
+        background-size: 10%;
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        z-index: 100;
+        }

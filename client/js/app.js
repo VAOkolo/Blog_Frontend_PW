@@ -1,5 +1,5 @@
-// const path = 'http://localhost:5000';
-const path = 'https://museapp-backend.herokuapp.com'
+const path = 'http://localhost:5000';
+// const path = 'https://museapp-backend.herokuapp.com'
 //fetch data from database
 async function fetchData() {
    try{ 
@@ -175,7 +175,7 @@ function submitPost(e) {
   let description = document.getElementById('postText').value;
   let giphyURL = document.getElementsByClassName('giphyAppend')[0].outerText;
 
-    const url = `${path}//posts/post`  // The url for post req to be sent to
+    const url = `${path}/posts/post`  // The url for post req to be sent to
     let jsonData = {}
     jsonData.content = description;
     jsonData.giphy = giphyURL;
@@ -227,6 +227,7 @@ function updateReaction(e){
     
       //send put request to server
       const url = `${path}/posts/${id}/reactions/${reaction}`;
+      console.log(url);
 
       const options = {
         method: "PUT",
