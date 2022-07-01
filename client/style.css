@@ -7,6 +7,8 @@
 }
 
 body{
+    padding-left: 10vw;
+    padding-right: 10vw;
    --navigation-color: #50b7f5;
    --navigation-background : #e6ecf0;
 }
@@ -397,9 +399,12 @@ body{
 }
 
 .postBody {
+    margin: 10px;
     flex: 1;
-    padding: 10px ;
-    border: 2px dotted blue;
+    padding: 10px;
+    border: 0px solid black;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .postAvatar{
@@ -464,4 +469,9 @@ body{
         justify-content: center;
         text-align: center;
         flex-direction: column;
+    }
+
+
+    ul > li {
+        list-style-type: none;
     }

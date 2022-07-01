@@ -1,7 +1,9 @@
+// const path = 'http://localhost:5000';
+const path = 'https://museapp-backend.herokuapp.com'
 //fetch data from database
 async function fetchData() {
    try{ 
-    fetch(`http://localhost:5000/posts/`)
+    fetch(`${path}/posts/`)
         .then(response => response.json())
         .then(data => appendResults(data));
    } catch (error) {
@@ -134,7 +136,7 @@ function submitComment(e){
     //logic for running post request and site update
     if(submitButton != "" && postid != "" && comment != "" && submitButton != undefined && postid != undefined && comment != undefined){
 
-        const url = `http://localhost:5000/posts/${postid}/comment` 
+        const url = `${path}/posts/${postid}/comment` 
         let jsonData = {}
         jsonData.content = comment;
         // jsonData.date = new Date();
@@ -173,7 +175,7 @@ function submitPost(e) {
   let description = document.getElementById('postText').value;
   let giphyURL = document.getElementsByClassName('giphyAppend')[0].outerText;
 
-    const url = "http://localhost:5000/posts/post"  // The url for post req to be sent to
+    const url = `${path}//posts/post`  // The url for post req to be sent to
     let jsonData = {}
     jsonData.content = description;
     jsonData.giphy = giphyURL;
@@ -224,7 +226,7 @@ function updateReaction(e){
     count++;
     
       //send put request to server
-      const url = `http://localhost:5000/posts/${id}/reactions/${reaction}`;
+      const url = `${path}/posts/${id}/reactions/${reaction}`;
 
       const options = {
         method: "PUT",
